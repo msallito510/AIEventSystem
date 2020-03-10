@@ -1,8 +1,5 @@
 # AIEventSystem
 
-# README Modulo2
-
-# Project Name
 
 ## Description
 
