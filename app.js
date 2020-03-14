@@ -6,7 +6,7 @@ const logger = require('morgan');
 const mongoose = require('mongoose');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-const mongo = require('./bin/mongo');
+
 const app = express();
 require('dotenv').config()
 // view engine setup
