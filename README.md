@@ -66,15 +66,24 @@ Event Access: -
 |Sign Up		|POST|		|Sign up a user|{mail, password, selfie}|/profile|
 |Log out	|GET	|/logout	|Log out a user	|	|/	|
 |Profile	|GET	|/Profile	|profile page editable form	|	|	|
-|Profile edited	|POST	|/profile|Send user's data changed|{user_email, password, selfie}|/profile	|
+|Profile edited	|POST	|/profile|Send user's data changed|{email, password, selfie}|/profile/edit	|
 
 ## Models
 
 User model
 
     {
-    	username: String
-    	password: String
+    	username: {
+            type: String,
+            required: true,
+            unique: true
+        }
+    	password: {
+            type: String,
+            required: true,
+            unique: true
+        }
+        selfie: String (url)
     }
 
 Event model
@@ -106,4 +115,10 @@ The url to your repository and to your deployed project
 ### Slides
 
 [Slides Link](http://slides.com/)
+
+## TODO list -
+1- repo
+2- express generator (master)
+3- deploy en heroku
+
 
