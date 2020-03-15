@@ -66,45 +66,76 @@ Event Access: -
 |Sign Up		|POST|		|Sign up a user|{mail, password, selfie}|/profile|
 |Log out	|GET	|/logout	|Log out a user	|	|/	|
 |Profile	|GET	|/Profile	|profile page editable form	|	|	|
-<<<<<<< HEAD
-|Profile edited	|POST	|/profile|Send user's data changed|{user_email, password, selfie}|/profile	|
-=======
 |Profile edited	|POST	|/profile|Send user's data changed|{email, password, selfie}|/profile/edit	|
->>>>>>> master
+
 
 ## Models
 
 User model
 
     {
-<<<<<<< HEAD
-    	username: String
-    	password: String
-=======
     	username: {
             type: String,
-            required: true,
-            unique: true
-        }
+            required: [true, 'the email is required.']
+            unique: [true, 'the email already exist.']
+        },
     	password: {
             type: String,
-            required: true,
-            unique: true
+            required: [true, 'the password is required.']          
+        },
+        selfie: {
+            type: String, // image url
+            required: [true, 'the image is required.']          
+        },
+        role: {
+            type: String,
+            default: 'User', // roles --> User & Admin
+            required: [true]            
         }
-        selfie: String (url)
->>>>>>> master
     }
 
 Event model
 
     { 
     	owner: ObjectId<User>
-    	name: String
-    	description: String
-    	date: Date
-    	location: String
-    	+
-    
+    	name: {
+            type: String,
+            required: [true, 'the event name is required.']
+           },
+    	description: String,
+        dateInit: { 
+            type: Date,
+            default: Date.now
+        }, 
+        dateEnd: { 
+            type: Date,
+            default: Date.now + 1
+        },
+        ratings: [
+            {
+            numberOfStars: Number,
+            created: { 
+                type: Date,
+                default: Date.now
+            }
+           }
+        ],
+    	location: {
+            type: String,
+            default: 'Barcelona',
+           },
+        guests: [
+           {
+            type: String,
+            status: {
+                 type: boolean,
+                 default: [false, 'the guest is not authorized.']
+                },
+            guest: {
+                selfie: String, //image url
+             }
+          }
+        ]               
     }
 
 ## Links
