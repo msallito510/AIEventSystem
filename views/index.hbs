@@ -1,5 +1,53 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<header class="bg-image">
+  <div class="container">
+    <h1>{{title}}</h1>
+    <h2>Welcome to {{title}}</h2>
+    <a href="/login" class="btn btn-transparent">Start Here.</a>
+  </div>
+</header>
 
+<section class="container">
+  <div>
+    <h3>Event List</h3>
+    <p>{{event.name}}</p>
+  </div>
+  <div class="col-events" {{!-- {{#each}} --}}>
+    {{!-- <img src={{event.image}} alt="" class="details-img-ball" /> --}}
+    <img
+      src="https://www.gevme.com/blog/wp-content/uploads/2016/12/wsi-imageoptim-event-photographer-reportage-documentary-photography-westfest-2012_21-1.jpg"
+      alt="" />
+  </div {{!-- {{/each}} --}}>
+</section>
 
-<a href="/login">hola</a>
+<section class=" bg-image bg-image-2">
+
+  <div class="section-primary">
+    <h3>What we offer for you event</h3>
+    <ul>
+      <li>Login without password</li>
+      <li>Create Events easilly</li>
+      <li>List of events in your location</li>
+      <li>Event list</li>
+      <li>Attemp list</li>
+      <li>AI event access</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h3>You know you like it.</h3>
+    <a href="/signup" class="btn">Register now!</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <ul>
+      <li><a href="#">Weblinks</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">Mainpage</a></li>
+    </ul>
+    <p>AI Access System. Ironhack - 2020 -</p>
+  </div>
+</footer>
