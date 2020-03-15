@@ -18,7 +18,17 @@ router.post('/login', function (req, res, next) {
 
         res.render('auth/login', { title: "This field cannot be empty" })
     } else {
-        res.render('index', { title: username })
+
+        User.findOne({ username: username, hashedPassword: password }).then((datausertoenter) => {
+            if (datausertoenter) {
+                res.render('index', { title: username })
+            } else {
+
+                res.render('auth/login', { title: "Sorry, try again" })
+            }
+
+        })
+
     }
 
 });
@@ -38,7 +48,7 @@ router.post('/signin', function (req, res, next) {
 
 
                     console.log(datalog)
-                    res.render('auth/login', { title: "Succes, now login please" })
+                    res.render('auth/login', { title: "Success, now login please" })
                 })
             }
 
