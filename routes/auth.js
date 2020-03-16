@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 const mongoose = require('mongoose')
 const User = require('../models/user')
+
 /* GET users listing. */
 router.get('/login', function (req, res, next) {
     res.render('auth/login')
@@ -21,7 +22,12 @@ router.post('/login', function (req, res, next) {
 
         User.findOne({ username: username, hashedPassword: password }).then((datausertoenter) => {
             if (datausertoenter) {
-                res.render('index', { title: username })
+                res.cookie('username', username, { maxAge: 900000, httpOnly: true });
+                res.redirect('/')
+                console.log(req.cookies['username'])
+
+
+
             } else {
 
                 res.render('auth/login', { title: "Sorry, try again" })

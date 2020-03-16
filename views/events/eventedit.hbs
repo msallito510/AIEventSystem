@@ -1,0 +1,16 @@
+<form action="/events/edit" method="post">
+
+    <label for="name"> Name</label>
+    <input type="text" value="{{data.name}}" name="name" id="">
+    <label for="name"> Description</label>
+    <input type="text" value="{{data.description}}" name="description" id="">
+
+    <label for="name"> Location</label>
+    <input type="text" value="{{data.location}}" name="location" id="">
+    <input type="text" hidden value="{{data._id}}" name="id" id="">
+
+
+    <button type="submit">Go</button>
+
+    {{error}}
+</form>

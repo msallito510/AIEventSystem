@@ -1,6 +1,5 @@
-import mongoose, { model } from 'mongoose';
-
-const { Schema } = mongoose;
+const mongoose = require('mongoose')
+const Schema = mongoose.Schema;
 
 const eventSchema = new Schema({
   owner: {
@@ -18,7 +17,7 @@ const eventSchema = new Schema({
   },
   dateEnd: {
     type: Date,
-    default: Date.now + 1,
+    default: Date.now,
   },
   ratings: [
     {
@@ -47,6 +46,6 @@ const eventSchema = new Schema({
   ],
 });
 
-const Events = model('evensts', eventSchema);
+const Events = mongoose.model('events', eventSchema);
 
-export default Events;
+module.exports = Events;
