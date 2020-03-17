@@ -10,15 +10,27 @@ const eventSchema = new Schema({
     type: String,
     required: [true, 'the event name is required.']
   },
+  price: {
+    type: Number,
+    default: 0.00
+  },
   description: String,
   image: String, // event image url
   dateInit: {
-    type: Date,
-    default: Date.now
+    type: String,
+    default: "undefined"
   },
   dateEnd: {
-    type: Date,
-    default: Date.now,
+    type: String,
+    default: "undefined",
+  },
+  timeInit: {
+    type: String,
+    default: "undefined"
+  },
+  timeEnd: {
+    type: String,
+    default: "undefined",
   },
   ratings: [
     {
@@ -32,6 +44,17 @@ const eventSchema = new Schema({
   location: {
     type: String,
     default: 'Barcelona, Spain'
+  },
+  provincia: {
+    type: String,
+    default: 'Barcelona'
+  },
+  municipio: {
+    type: String,
+    default: 'Barcelona'
+  },
+  admin: {
+    type: String
   },
   guests: [
     {

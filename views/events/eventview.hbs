@@ -1,0 +1,21 @@
+<div class="eventcontainer">
+    <ul class="listevent">
+
+        <li class="titleevent"> {{data.name}} </li>
+
+        <li class="locationevent">{{data.provincia}}</li>
+
+        <li class="locationevent">de : {{data.dateInit}} {{data.timeInit}} </li>
+
+        <li class="locationevent">a : {{data.dateEnd}} {{data.timeEnd}} </li>
+
+        <li class="locationevent">{{data.price}} € </li>
+        creado por : {{data.user}}
+    </ul>
+
+
+
+
+</div>
+<a class=" btnpink" href="/events/edit/{{data.id}}">EDIT</a>
+<a class="btn" href="/events">Back</a>

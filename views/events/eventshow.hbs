@@ -1,12 +1,31 @@
-<h2>Event list</h2>
-<ul>
+<div class="containerev">
+
     {{#each data}}
-    <li>{{this.name}} <b>{{this.location}}</b></li>
-    <h4><a href="/events/edit/{{this.id}}">EDIT</a></h4>
+    <div class="eventcontainer">
 
+        <div class="imageside">
+
+            <img class="imgeventshow" src="/images/no_image_available.jpeg" alt="" srcset="">
+
+        </div>
+        <div class="infoside">
+            <p class="titleevent">{{this.name}}</p>
+            <p class="locationevent">{{this.provincia}}</p>
+
+
+            <a class=" btnpink" href="/events/view/{{this.id}}">GO TO EVENT</a>
+        </div>
+        {{!-- <ul class="listevent">
+
+            <li class="titleevent"> {{this.name}} </li>
+
+            <li class="locationevent">{{this.provincia}}</li>
+            <h4><a class="btn" href="/events/edit/{{this.id}}">EDIT</a></h4>
+           
+        </ul> --}}
+
+    </div>
     {{/each}}
-</ul>
 
-
-
-<a href="/events/add">Add Event</a>
+</div>
+<a class="btn" href="/events/add">Add Event</a>

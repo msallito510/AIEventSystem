@@ -1,15 +1,23 @@
 <header class="bg-image">
   <div class="container">
+
+
     <h2>Welcome</h2>
     <h1>{{title}}</h1>
+
     <a href="/login" class="btn btn-transparent">Start Here.</a>
   </div>
 </header>
 
 <section class="container">
+  {{#if title}}
+  <a href="/events" class="btn">Go to Events!</a>
+
+  {{/if}}
   <div>
     <h3>Event List</h3>
     <p>{{event.name}}</p>
+
   </div>
   <div class="col-events" {{!-- {{#each}} --}}>
     {{!-- <img src={{event.image}} alt="" class="details-img-ball" /> --}}
