@@ -1,21 +1,44 @@
-<form class="loginparent" action="/signin" method="post">
+<div class="wrapper">
+    <form class="loginparent" action="/signin" method="post">
+        <h1>AI - Signin</h1>
+        <input class="loginitem" type="text" name="username" id="" placeholder="username">
 
-    <label class="loginlabel" for="username">User</label>
-    <input class="loginitem" type="text" name="username" id="">
+        <input class="loginitem" type="text" name="email" id="" placeholder="email">
 
-    <label class="loginlabel" for="username">Email</label>
-    <input class="loginitem" type="text" name="email" id="">
+        <input class="loginitem" type="password" name="password" id="" placeholder="password">
 
+        <input class="logbtn" type="submit" value="Signin">
+        {{title}}
+    </form>
 
-    <label class="loginlabel" for="password">Password</label>
-    <input class="loginitem" type="password" name="password" id="">
-
-    <input class="logbtn" type="submit" value="GO">
-    {{title}}
-</form>
-
-<div class="loginparentlittle">
-
-    <a href="/login">Login to enter</a>
-
+    <div class="bottom-text-l">
+        <a href="/">Home</a>
+    </div>
+    <div class="bottom-text-r">
+        <a href="/login">Login</a>
+    </div>
+    <div class="face-recognition selfie">
+        <input type="image" src="/images/camera.png" />
+    </div>
 </div>
+
+{{!-- <div class="wrapper">
+    <form class="loginparent" action="/signin" method="post">
+
+        <input class="loginitem" type="text" name="username" id="" placeholder="username">
+
+        <input class="loginitem" type="text" name="email" id="" placeholder="email">
+
+        <input class="loginitem" type="password" name="password" id="" placeholder="password">
+
+        <input class="logbtn" type="submit" value="GO">
+        {{title}}
+    </form>
+</div>
+
+<div class="bottom-text">
+    <a href="/login">Login to enter</a>
+</div>
+<div class="face-recognition selfie">
+    <input type="image" src="/images/camera.png" />
+</div> --}}

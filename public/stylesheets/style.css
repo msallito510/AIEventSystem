@@ -1,12 +1,17 @@
 body {
+  margin: 0;
+	padding: 0;
   width: 100%;
   height:100%;
-  /* font-family: 'Open Sans','Helvetica Neue',Helvetica, sans-serif; */
   font-size: 100%;
   line-height: 1.45;
   color: #141414;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: rgba(230, 226, 226, 0.4);
+	-webkit-background-size: cover;
+	background-size: cover;
+	font-family: poppins;
 }
 
 @import url('//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css');
@@ -49,11 +54,6 @@ img{
   padding: .8rem 1rem .9rem;
   text-shadow: 0 1px rgba(black,.3);
   box-shadow: 0 0 2px rgba(black,.2);
-
-  @media (max-width: 43.75em){
-    padding: .5rem .7rem .6rem;
-    font-size: 1rem;
-  }
 }
 
 .btn:hover{
@@ -90,29 +90,17 @@ header{
   position: relative;
   z-index: 1;
   overflow: hidden;
-
-  @media (max-width: 43.75em){
-    padding: 2rem 0;
-  }
 }
 
 header h1{
   font-size: 3rem;
   margin: 0 0 1rem; 
-
-  @media (max-width: 43.75em){
-    font-size: 2rem;
-  } 
 }
 
 header h2{
   font-weight: 300;
   font-size: 1.5rem;
   margin: 0 0 1rem;
-
-  @media (max-width: 43.75em){
-    font-size: 1.5rem;
-  }
 }
 
 .section-primary{
@@ -189,23 +177,11 @@ header h2{
   .features i{
     font-size: 4rem;
     margin: 0 0 2rem 0;
-
-    @media (max-width: 43.75em){
-      font-size: 1.5rem;
-      width: 2rem;
-      text-align: center;
-      margin: 0 0 1rem 0;
-      float: left;
-    }
   }
 
   .features p{
     margin: 0 0 1rem 0;
     font-size: 1rem;
-
-    @media (max-width: 43.75em){
-      margin-left: 3rem;
-    }
   }
 
 blockquote{
@@ -226,10 +202,6 @@ blockquote p{
   margin: 0;
   display: inline;
   font-size: 1.5rem;
-  
-  @media (max-width: 43.75em){
-    font-size: 1.2rem;
-  }
 }
   
 cite{
@@ -237,10 +209,7 @@ cite{
   display: block;
   margin: .5rem 0 0 1.2rem;
   text-style: italic;
-  
-  @media (max-width: 43.75em){
-    font-size: .8rem;
-  }
+
 }   
 cite:before{
     content: '–';
@@ -311,4 +280,108 @@ footer:hover{
     background-image:url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/366117/8_copy_copy.jpg'); 
     background-position: center center;
   }
+/* ========= login ========= */
+/* ========================= */
 
+.wrapper {
+ 
+	width: 400px;
+	height: 420px;
+	color: #000;
+	top: 50%;
+	left: 50%;
+	padding: 60px 30px;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	box-sizing: border-box;
+	box-shadow: 8px 8px 50px #000;
+}
+
+.wrapper h1 {
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	font-size: 22px;
+	text-align: center;
+	margin-bottom: 8%;
+	font-family: 'Pacifico', cursive;
+
+}
+.wrapper input {
+	width: 100%;
+	margin-bottom: 20px;
+
+}
+.wrapper input[type=text], .wrapper input[type=password] {
+	border: none;
+	border-bottom: 1px solid #ddd;
+	background: transparent;
+	outline: none;
+	height: 30px;
+	font-size: 16px;
+	opacity: 1;
+	color: #ccc;
+
+}
+.wrapper input[type=submit] {
+	border: none;
+	outline: none;
+	height: 40px;
+	background: #f6648b;
+	color: #fff;
+	font-size: 14px;
+	font-weight: bold;
+}
+.wrapper input[type=submit]:hover {
+	cursor: pointer;
+
+}
+.wrapper input::-webkit-input-placeholder {
+  color: black;
+}
+.wrapper a {
+	font-size: 14px;
+	text-decoration: none;
+	opacity: 0.8;
+}
+.wrapper a:hover {
+	color: #ccc;
+	opacity: 1;
+}
+.bottom-text {
+	color: #ccc
+}
+.bottom-text input {
+	width: 10%;
+	float: left;
+}
+.bottom-text-r a {
+	float: right;
+}
+
+.bottom-text-l a {
+	float: left;
+}
+
+.face-recognition {
+	margin-top: 12%;
+	text-align: center;
+}
+.face-recognition a {
+width: 30px;
+height: 30px;
+display: inline-block;
+border: 1px solid #fff;
+border-radius: 50%;
+margin: 0 5px; 
+}
+
+.face-recognition input{
+  width: 3rem;
+}
+
+.selfie{
+  margin-top: 44rem;
+  text-align: center;
+  margin: 1rem;
+}
