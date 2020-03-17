@@ -9,7 +9,7 @@ const MongoStore = require("connect-mongo")(session);
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/auth");
 const eventRouter = require("./routes/events");
-
+const profileRouter = require("./routes/profile");
 const app = express();
 require("dotenv").config();
 // view engine setup
@@ -29,6 +29,7 @@ app.use("/", indexRouter);
 
 app.use("/", usersRouter);
 app.use("/events", eventRouter);
+app.use("/profile", profileRouter);
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
