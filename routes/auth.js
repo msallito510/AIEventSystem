@@ -1,17 +1,18 @@
 var express = require("express");
 var router = express.Router();
+
 const mongoose = require("mongoose");
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const User = require("../models/user");
 
-router.get("/login", function(req, res, next) {
+router.get("/login", function (req, res, next) {
   res.render("auth/login");
 });
-router.get("/signin", function(req, res, next) {
+router.get("/signin", function (req, res, next) {
   res.render("auth/signin");
 });
-router.post("/login", function(req, res, next) {
+router.post("/login", function (req, res, next) {
   let { username, password } = req.body;
 
   if (username == "" || password == "") {
@@ -33,7 +34,7 @@ router.post("/login", function(req, res, next) {
     );
   }
 });
-router.post("/signin", function(req, res, next) {
+router.post("/signin", function (req, res, next) {
   let { username, password, email } = req.body;
 
   if (username == "" || password == "") {
@@ -50,6 +51,7 @@ router.post("/signin", function(req, res, next) {
         }).then(datalog => {
           console.log(datalog);
           res.render("auth/login", { title: "Success, now login please" });
+
         });
       }
     });
