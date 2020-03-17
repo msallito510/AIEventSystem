@@ -2,7 +2,6 @@
 
 .eventcontainer {
 
-  background-color: rgba(189, 189, 189, 0.377);
 
 display: flex;
 flex-direction: row;
@@ -101,16 +100,29 @@ width: 15vw;
 
   border: solid 2px rgba(131, 130, 130, 0.192);
 }
-
+.btnpink{
+  	border: none;
+	outline: none;
+	height: 40px;
+	background: #f6648b;
+	color: #fff;
+	font-size: 14px;
+  font-weight: bold;
+  padding: 10px;
+}
 @media only screen and (max-device-width: 425px) {
    .containerev{
-     flex-direction: column;
+     flex-direction: row;
      width: 100%;
    
    }
    .eventcontainer{
 height: 30vh;
 
+   }
+   .infoside{
+     display:flex;
+     flex-direction: column;
    }
   .imageside{
     
@@ -119,5 +131,4 @@ height: 30vh;
   .imgeventshow{
       width: 100%;
   }
-    
-  }
+}

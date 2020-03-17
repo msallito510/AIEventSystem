@@ -10,7 +10,19 @@
         <input class="" type="text" value="{{data.location}}" name="location" id="">
         <input class="titleevent" type="text" hidden value="{{data._id}}" name="id" id="">
 
+        <h2>Event day</h2>
+        <h2 class="inputlabeladd">FROM</h2>
 
+
+        <input class="inputlabeladd" type="date" value="{{data.dateInit}}" id="appt" value="" name="datefrom">
+        <input class="inputlabeladd" type="time" value="{{data.timeInit}}" id="appt" name="timefrom">
+        <br>
+        <h2 class="inputlabeladd">TO</h2>
+        <input class="inputlabeladd" type="date" value="{{data.dateEnd}}" id="appt" name="dateto">
+        <input class="inputlabeladd" type="time" value="{{data.timeEnd}}" id="appt" name="timeto">
+        <br>
+        <h2>Price €</h2>
+        <input type="number" step=".01" value="{{data.price}}" class="inputadd" name="price" id="">
         <button class="btn" type="submit">Go</button>
 
 
