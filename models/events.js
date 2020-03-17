@@ -33,6 +33,14 @@ const eventSchema = new Schema({
     type: String,
     default: 'Barcelona, Spain'
   },
+  provincia: {
+    type: String,
+    default: 'Barcelona'
+  },
+  municipio: {
+    type: String,
+    default: 'Barcelona'
+  },
   guests: [
     {
       type: String,

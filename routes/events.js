@@ -14,13 +14,13 @@ router.get('/add', function (req, res, next) {
 });
 router.post('/add', function (req, res, next) {
 
-    const { name, description, location } = req.body;
+    const { name, description, location, provincia, datefrom, dateto } = req.body;
 
     if (name == "" || description == "" || location == "") {
         res.render('events/eventadd', { error: "Empty" });
     } else {
 
-        Event.insertMany({ name: name, description: description, location: location })
+        Event.insertMany({ name: name, description: description, location: location, provincia: provincia, dateInit: datefrom, dateEnd: dateto })
         res.redirect('/events');
     }
 
@@ -48,6 +48,24 @@ router.post('/edit', function (req, res, next) {
 
         })
     }
+
+});
+router.get('/view/:id/', function (req, res, next) {
+    let id = req.params.id
+    Event.findById({ _id: id }).then((data) => {
+
+        res.render('events/eventview', { data: data });
+
+    })
+});
+router.post('/remove/:id/', function (req, res, next) {
+
+    let id = req.params.id
+    Event.findByIdAndRemove({ _id: id }).then((data) => {
+
+        res.redirect('/events');
+
+    })
 
 });
 module.exports = router;
