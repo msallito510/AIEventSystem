@@ -1,12 +1,18 @@
 <h2>Event list</h2>
-<ul>
-    {{#each data}}
-    <li>{{this.name}} <b>{{this.location}}</b></li>
-    <h4><a href="/events/edit/{{this.id}}">EDIT</a></h4>
+{{#each data}}
+<div class="eventcontainer">
+    <ul class="listevent">
 
-    {{/each}}
-</ul>
+        <li class="titleevent"> {{this.name}} </li>
+
+        <li class="locationevent">{{this.location}}</li>
+        <h4><a class="btn" href="/events/edit/{{this.id}}">EDIT</a></h4>
+
+    </ul>
 
 
 
-<a href="/events/add">Add Event</a>
+
+</div>
+{{/each}}
+<a class="btn" href="/events/add">Add Event</a>

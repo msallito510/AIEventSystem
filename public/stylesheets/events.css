@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+
+.eventcontainer {
+  text-align: center;
+  background-color: rgba(189, 189, 189, 0.377);
+  width: 50%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+.eventcontaineradd {
+  text-align: center;
+  background-color: rgba(189, 189, 189, 0.377);
+  width: 50%;
+  padding: 10px;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+.listevent li {
+  list-style: none;
+}
+.titleevent,
+.locationevent {
+  font-family: "Lato", sans-serif;
+  padding: 10px;
+  font-size: 120%;
+  font-weight: bold;
+  color: rgba(53, 53, 53, 0.842);
+}
+.locationevent {
+  font-size: 90%;
+  margin-top: 15px;
+  color: rgba(48, 48, 48, 0.699);
+}
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+  .eventcontainer,
+  .eventcontaineradd {
+    width: 100%;
+  }
+}
