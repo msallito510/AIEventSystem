@@ -1,17 +1,14 @@
 <header class="bg-image">
   <div class="container">
+    <h2>Welcome {{title}}</h2>
 
-
-    <h2>Welcome</h2>
-    <h1>{{title}}</h1>
-
-    <a href="/login" class="btn btn-transparent">Start Here.</a>
+    {{> menu}}
   </div>
 </header>
 
 <section class="container">
   {{#if title}}
-  <a href="/events" class="btn">Go to Events!</a>
+  <a href="/events" class="btn">your Events!</a>
 
   {{/if}}
   <div>
@@ -19,34 +16,10 @@
     <p>{{event.name}}</p>
 
   </div>
-  <div class="col-events" {{!-- {{#each}} --}}>
-    {{!-- <img src={{event.image}} alt="" class="details-img-ball" /> --}}
-    <img
-      src="https://www.gevme.com/blog/wp-content/uploads/2016/12/wsi-imageoptim-event-photographer-reportage-documentary-photography-westfest-2012_21-1.jpg"
-      alt="" />
-  </div {{!-- {{/each}} --}}>
-</section>
-
-<section class=" bg-image bg-image-2">
-
-  <div class="section-primary">
-    <h3>What we offer for you event</h3>
-    <ul>
-      <li>Login without password</li>
-      <li>Create Events easilly</li>
-      <li>List of events in your location</li>
-      <li>Event list</li>
-      <li>Attemp list</li>
-      <li>AI event access</li>
-    </ul>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <h3>You know you like it.</h3>
-    <a href="/signin" class="btn">Register now!</a>
-  </div>
+  <div class="col-events">
+    <div class="col-events">
+      {{!-- {{> events}} --}}
+    </div>
 </section>
 
 <footer>

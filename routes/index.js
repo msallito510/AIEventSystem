@@ -8,7 +8,7 @@ router.get("/", function (req, res, next) {
     let name = datausr.username;
     res.render("index", { title: name });
   } else {
-    res.render("index");
+    res.render("landing");
   }
 });
 
