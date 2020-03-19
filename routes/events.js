@@ -14,11 +14,19 @@ router.use('/', function (req, res, next) {
     }
 })
 router.get('/', function (req, res, next) {
-    Event.find({}).then((data) => {
+    let datausr = req.cookies["datauser"];
+    let name = datausr.username;
+    Event.find({ admin: name }).then((persodata) => {
 
-        res.render('events/eventshow', { data: data });
+        Event.find({}).then((data) => {
+
+            res.render('events/eventshow', { data: data, persodata: persodata });
+
+        })
 
     })
+
+
 
 });
 router.get('/add', function (req, res, next) {
