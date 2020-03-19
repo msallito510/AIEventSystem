@@ -73,11 +73,20 @@ router.post('/edit', function (req, res, next) {
 });
 router.get('/view/:id/', function (req, res, next) {
     let id = req.params.id
-    Event.findById({ _id: id }).then((data) => {
+    let datausr = req.cookies["datauser"];
+    let usernow = datausr.username;
+
+
+    Event.findOne({ _id: id }).then((data) => {
 
         res.render('events/eventview', { data: data });
 
     })
+
+
+
+
+
 });
 router.post('/remove/:id/', function (req, res, next) {
 

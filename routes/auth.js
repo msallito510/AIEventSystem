@@ -47,6 +47,7 @@ router.post("/signin", function (req, res, next) {
         User.insertMany({
           username: username,
           hashedPassword: password,
+          email: email,
           selfie: "none.png"
         }).then(datalog => {
           console.log(datalog);
@@ -56,5 +57,9 @@ router.post("/signin", function (req, res, next) {
       }
     });
   }
+});
+router.get("/out", function (req, res, next) {
+  res.clearCookie('datauser')
+  res.redirect("/");
 });
 module.exports = router;
