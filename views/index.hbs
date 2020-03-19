@@ -11,15 +11,14 @@
   <a href="/events" class="btn">your Events!</a>
 
   {{/if}}
+
   <div>
     <h3>Event List</h3>
-    <p>{{event.name}}</p>
-
   </div>
   <div class="col-events">
-    <div class="col-events">
-      {{!-- {{> events}} --}}
-    </div>
+    {{> eventListAll}}
+  </div>
+
 </section>
 
 <footer>

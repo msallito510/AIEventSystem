@@ -1,18 +1,18 @@
-const mongoose = require('mongoose')
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const eventSchema = new Schema({
   owner: {
     type: Schema.Types.ObjectId,
-    ref: 'user'
+    ref: "user"
   },
   name: {
     type: String,
-    required: [true, 'the event name is required.']
+    required: [true, "the event name is required."]
   },
   price: {
     type: Number,
-    default: 0.00
+    default: 0.0
   },
   description: String,
   image: String, // event image url
@@ -22,7 +22,7 @@ const eventSchema = new Schema({
   },
   dateEnd: {
     type: String,
-    default: "undefined",
+    default: "undefined"
   },
   timeInit: {
     type: String,
@@ -30,7 +30,7 @@ const eventSchema = new Schema({
   },
   timeEnd: {
     type: String,
-    default: "undefined",
+    default: "undefined"
   },
   ratings: [
     {
@@ -43,15 +43,13 @@ const eventSchema = new Schema({
   ],
   location: {
     type: String,
-    default: 'Barcelona, Spain'
+    default: "Barcelona, Spain"
   },
-  provincia: {
-    type: String,
-    default: 'Barcelona'
+  Lat: {
+    type: String
   },
-  municipio: {
-    type: String,
-    default: 'Barcelona'
+  Long: {
+    type: String
   },
   admin: {
     type: String
@@ -61,7 +59,7 @@ const eventSchema = new Schema({
       type: String,
       status: {
         type: Boolean,
-        default: [false, 'the guest is not authorized.']
+        default: [false, "the guest is not authorized."]
       },
       guest: {
         selfie: String // image url
@@ -70,6 +68,6 @@ const eventSchema = new Schema({
   ]
 });
 
-const Events = mongoose.model('events', eventSchema);
+const Events = mongoose.model("events", eventSchema);
 
 module.exports = Events;
