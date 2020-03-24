@@ -1,20 +1,21 @@
 <h2>My events</h2>
-{{#each persodata}}
-<div class="eventcontainer">
+<div class="containerev">
+    <div class="eventcontainer">
+        {{#each persodata}}
 
-    <div class="imageside">
-        {{!-- 
+        <div class="imageside">
+            {{!-- 
             <img class="imgeventshow" src="/images/no_image_available.jpeg" alt="" srcset=""> --}}
 
-    </div>
-    <div class="infoside">
-        <p class="titleevent">{{this.name}}</p>
-        <p class="locationevent">{{this.location}}</p>
+        </div>
+        <div class="infoside">
+            <p class="titleevent">{{this.name}}</p>
+            <p class="locationevent">{{this.location}}</p>
 
 
-        <a class=" btnpink" href="/events/view/{{this.id}}">GO TO EVENT</a>
-    </div>
-    {{!-- <ul class="listevent">
+            <a class=" btnpink" href="/events/view/{{this.id}}">GO TO EVENT</a>
+        </div>
+        {{!-- <ul class="listevent">
 
             <li class="titleevent"> {{this.name}} </li>
 
@@ -23,8 +24,9 @@
            
         </ul> --}}
 
+        {{/each}}
+    </div>
 </div>
-{{/each}}
 
 <h2>Other events</h2>
 

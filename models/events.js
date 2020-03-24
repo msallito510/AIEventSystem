@@ -54,18 +54,24 @@ const eventSchema = new Schema({
   admin: {
     type: String
   },
-  guests: [
-    {
+  guests:
+  {
+    username: {
       type: String,
-      status: {
-        type: Boolean,
-        default: [false, "the guest is not authorized."]
-      },
-      guest: {
-        selfie: String // image url
-      }
+      unique: true
+    },
+    id: String,
+    type: Array,
+
+    status: {
+      type: Boolean,
+      default: [false, "the guest is not authorized."]
+    },
+    guest: {
+      selfie: String // image url
     }
-  ]
+  }
+
 });
 
 const Events = mongoose.model("events", eventSchema);
