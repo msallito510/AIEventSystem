@@ -55,6 +55,7 @@
 .menu li a.home:before {
   content: "\f039";
 }
+
 .menu-bar li a:hover,
 .menu li a:hover,
 .menu li:first-child a {

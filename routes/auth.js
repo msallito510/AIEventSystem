@@ -6,13 +6,13 @@ const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const User = require("../models/user");
 
-router.get("/login", function (req, res, next) {
+router.get("/login", function(req, res, next) {
   res.render("auth/login");
 });
-router.get("/signin", function (req, res, next) {
+router.get("/signin", function(req, res, next) {
   res.render("auth/signin");
 });
-router.post("/login", function (req, res, next) {
+router.post("/login", function(req, res, next) {
   let { username, password } = req.body;
 
   if (username == "" || password == "") {
@@ -26,7 +26,6 @@ router.post("/login", function (req, res, next) {
             httpOnly: true
           });
           res.redirect("/");
-          console.log(req.cookies["username"]);
         } else {
           res.render("auth/login", { title: "Sorry, try again" });
         }
@@ -34,7 +33,7 @@ router.post("/login", function (req, res, next) {
     );
   }
 });
-router.post("/signin", function (req, res, next) {
+router.post("/signin", function(req, res, next) {
   let { username, password, email } = req.body;
 
   if (username == "" || password == "") {
@@ -52,14 +51,13 @@ router.post("/signin", function (req, res, next) {
         }).then(datalog => {
           console.log(datalog);
           res.render("auth/login", { title: "Success, now login please" });
-
         });
       }
     });
   }
 });
-router.get("/out", function (req, res, next) {
-  res.clearCookie('datauser')
+router.get("/out", function(req, res, next) {
+  res.clearCookie("datauser");
   res.redirect("/");
 });
 module.exports = router;

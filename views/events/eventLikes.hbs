@@ -1,24 +1,21 @@
 <header class="bg-image">
   <div class="container">
-    <h2>Welcome {{title}}</h2>
-
+    <h2>This are your events you like</h2>
     {{> menu}}
   </div>
 </header>
 
 <section class="container">
-  {{#if title}}
-  <a href="/events" class="btn">your Events!</a>
-
-  {{/if}}
-
   <div>
     <h3>Event List</h3>
   </div>
   <div class="col-events">
+    {{#if title}}
     {{> eventListAll}}
+    {{else}}
+    <p>You do not like any event yet...</p>
+    {{/if}}
   </div>
-
 </section>
 
 {{> footer}}
