@@ -283,7 +283,8 @@ footer:hover {
 /* ========= login ========= */
 /* ========================= */
 
-.title h1 {
+.title h1,
+.login h1 {
   margin: 0;
   padding: 0;
   font-weight: bold;
@@ -293,7 +294,8 @@ footer:hover {
   font-family: "Cinzel Decorative";
 }
 
-.title p {
+.title p,
+.login p {
   font-family: "Cinzel Decorative", cursive;
   font-size: 1rem;
 }

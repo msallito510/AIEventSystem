@@ -1,33 +1,31 @@
-<div class="eventcontainer">
+<div class="containerev">
+    {{> eventDetailsMenu}}
+    <div>
+        <ul class="listevent">
+            <li class="titleevent"> {{data.name}} </li>
 
-    <ul class="listevent">
-        <li class="titleevent"> {{data.name}} </li>
+            <li class="locationevent">{{data.provincia}}</li>
 
-        <li class="locationevent">{{data.provincia}}</li>
+            <li class="locationevent">from : {{data.dateInit}} {{data.timeInit}} </li>
 
-        <li class="locationevent">de : {{data.dateInit}} {{data.timeInit}} </li>
+            <li class="locationevent">to : {{data.dateEnd}} {{data.timeEnd}} </li>
 
-        <li class="locationevent">a : {{data.dateEnd}} {{data.timeEnd}} </li>
+            <li class="locationevent">{{data.price}} € </li>
+            creado por : {{data.admin}}
+        </ul>
+    </div>
+    <div>
+        <form action="/events/assist" method="post">
+            <input type="text" name="id" value="{{data.id}}" hidden>
 
-        <li class="locationevent">{{data.price}} € </li>
-        creado por : {{data.admin}}
-    </ul>
+            <button class="btnpink" type="submit">Assist</button>
+        </form>
+        <form action="/events/cancel" method="post">
+            <input type="text" name="id" value="{{data.id}}" hidden>
 
-    <form action="/events/assist" method="post">
-        <input type="text" name="id" value="{{data.id}}" hidden>
-
-        <button class="btnpink" type="submit">Assist</button>
-
-
-    </form>
-    <form action="/events/cancel" method="post">
-        <input type="text" name="id" value="{{data.id}}" hidden>
-
-        <button class="btnpink" type="submit">Cancel</button>
-
-
-    </form>
-
+            <button class="btnpink" type="submit">Cancel</button>
+        </form>
+    </div>
 </div>
 
 

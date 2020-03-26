@@ -1,68 +1,23 @@
-<h2>My events</h2>
-<div class="containerev">
-    <div class="eventcontainer">
-        {{#each persodata}}
+{{> eventsMenu}}
 
-        <div class="imageside">
-            {{!-- 
+<div class="containerev">
+    <h2>My events</h2>
+    {{#each persodata}}
+
+    <div class="imageside">
+        {{!-- 
             <img class="imgeventshow" src="/images/no_image_available.jpeg" alt="" srcset=""> --}}
 
-        </div>
-        <div class="infoside">
-            <p class="titleevent">{{this.name}}</p>
-            <p class="locationevent">{{this.location}}</p>
-
-
-            <a class=" btnpink" href="/events/view/{{this.id}}">GO TO EVENT</a>
-        </div>
-        {{!-- <ul class="listevent">
-
-            <li class="titleevent"> {{this.name}} </li>
-
-            <li class="locationevent">{{this.provincia}}</li>
-            <h4><a class="btn" href="/events/edit/{{this.id}}">EDIT</a></h4>
-           
-        </ul> --}}
-
-        {{/each}}
     </div>
+    <div class="infoside">
+        <p class="titleevent">{{this.name}}</p>
+        <p class="locationevent">{{this.location}}</p>
+
+        <a class=" btnpink" href="/events/view/{{this.id}}">GO TO EVENT</a>
+    </div>
+    {{/each}}
 </div>
 
 <h2>Other events</h2>
 
 {{> eventListAll}}
-{{!-- 
-<div class="containerev">
-
-    {{#each data}}
-    <div class="eventcontainer">
-
-        <div class="imageside">
-            {{!-- 
-            <img class="imgeventshow" src="/images/no_image_available.jpeg" alt="" srcset=""> --}}
-
-</div>
-<div class="infoside">
-    <p class="titleevent">{{this.name}}</p>
-    <p class="locationevent">{{this.location}}</p>
-
-
-    <a class=" btnpink" href="/events/view/{{this.id}}">GO TO EVENT</a>
-</div>
-{{!-- <ul class="listevent">
-
-            <li class="titleevent"> {{this.name}} </li>
-
-            <li class="locationevent">{{this.provincia}}</li>
-            <h4><a class="btn" href="/events/edit/{{this.id}}">EDIT</a></h4>
-           
-        </ul>
-
-    </div>
-    {{/each}}
-
-</div> --}}
-
-
-
-<a class="btn" href="/events/add">Add Event</a>

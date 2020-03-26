@@ -15,7 +15,8 @@
   display: flex;
   flex-direction: row;
 }
-.eventcontaineradd {
+
+/* .eventcontaineradd {
   text-align: center;
   background-color: rgba(189, 189, 189, 0.377);
   width: 50%;
@@ -29,7 +30,7 @@
   align-items: center;
   margin: 0 auto;
   margin-bottom: 20px;
-}
+} */
 .listevent li {
   list-style: none;
 }
@@ -118,20 +119,4 @@
 
 .imgeventshow {
   width: 100%;
-}
-
-@media only screen and (max-device-width: 425px) {
-  .containerev {
-    flex-direction: row;
-    width: 100%;
-  }
-  .eventcontainer {
-    height: 30vh;
-  }
-  .infoside {
-    display: flex;
-    flex-direction: column;
-    height: 5rem;
-    width: 5rem;
-  }
 }
