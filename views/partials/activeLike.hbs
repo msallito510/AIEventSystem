@@ -1,20 +1,27 @@
 {{!-- <form action="" method="post">
-  <a href="/events/likes/{{data.id}}">
     <i class="fa fa-heart-o"></i>
   </a>
 
+<form action="/events/like/{{this.id}}" method="post">
 </form> --}}
 
-<form action="/events/like/{{this.id}}" method="post">
-  {{!-- {{#if data.likes }} --}}
+{{#if this.likes }}
+<a href="/events/likes/{{data.id}}">
 
-
+  a
   <button type="submit">
     <i class="fa fa-heart-o"></i>
+
   </button>
-  {{!-- {{#else}} --}}
-  {{!-- <a href="/events/likes/{{data.id}}">
-    <i class="fas fa-heart"></i>
-  </a> --}}
-  {{!-- {{/end}} --}}
-</form>
+  </form>
+  {{else}}
+  b
+  <a href="/events/likes/{{data.id}}">
+
+
+    <button type="submit">
+      <i class="fa fa-heart-o"></i>
+
+    </button>
+    </form>
+    {{/if}}
