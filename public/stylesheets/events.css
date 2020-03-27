@@ -119,4 +119,72 @@
 
 .imgeventshow {
   width: 100%;
+
+}
+
+.fa_custom {
+color:black
+}
+.profile{
+
+ width: 80%;
+  
+   font-family: "Lato", sans-serif;
+   color:rgba(66, 66, 66, 0.938)  ;
+   border: rgba(128, 128, 128, 0.233) solid 2px;
+   margin:0 auto;
+   background-color:#a74e664d ;
+   margin-bottom: 35px;
+   padding-bottom: 10px;
+
+}
+.display{
+  display: none;
+}
+.private{
+  width: 80%;
+  
+   font-family: "Lato", sans-serif;
+margin-bottom: 35px;
+ color:rgba(66, 66, 66, 0.938)  ;
+  border: rgba(128, 128, 128, 0.233) solid 2px;
+  margin:0 auto;
+  background-color:#fa678f ;
+}
+.private h3 {
+  color:white ;
+ text-align: center;
+
+}
+.profile h5 {
+  
+margin-left: 2rem;
+font-size: 110%;
+margin-bottom: 10px;
+}
+.profile  input {
+   margin-bottom: 10px;
+  margin-left: 2rem;
+font-size: 130%;
+border: none;
+width: 70%;;
+}
+.profile  input[type="submit"]  {
+   margin-bottom: 10px;
+  margin-left: 2rem;
+  background-color:#fa678f ;
+font-size: 130%;
+border: none;
+}
+
+.userlabel{
+font-style: italic;
+  color: #000;
+
+}
+
+.edituser{
+  margin-left: 10px;
+   color:rgba(66, 66, 66, 0.938)  ;
+
 }

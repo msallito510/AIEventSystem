@@ -44,7 +44,7 @@ mongoose
   .connect(dbPath, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useFindAndModify: true
+    useFindAndModify: false
   })
   .then(() => {
     console.log("Works!!!!");

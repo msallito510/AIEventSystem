@@ -48,10 +48,68 @@
 
 
 </div>
-<div class="eventcontaineradd">
-
-
-
+<div class="private">
+    <h3 class="center">User Information</h3>
 </div>
+<div class="profile">
+    <form action="/profile/edit" method="post">
+        <input name="nametoedit" hidden value="{{datauser.username}}">
+        <h5>Your username is : <span class="userlabel">{{datauser.username}}</span>
+            <a class="edituser " id="editUser">Edit</a>
+            <a class="edituser display" id="cancelEdit">Cancel</a>
+        </h5>
+        <input id="username" class="display" type="text" value="" name="name"> {{error}}
+        <input id="buttonchange" class="display" type="submit" value="Save" name="">
+        <br>
+        <h5 class="display userlabel" id="useralert">Change username need re-login</h5>
+    </form>
+    <form action="/profile/edit" method="post">
+        <input name="nametoedit" hidden value="{{datauser.username}}">
+        <h5>Change Password
+            <a class="edituser" id="editPass">Edit</a>
+            <a class="edituser display" id="cancelPass">Cancel</a>
+        </h5>
+        <input id="password" class="display" type="text" value="" name="name">
+        <input id="password2" class="display" type="text" value="" name="name"> {{error}}
+        <input id="buttonchangepass" class="display" type="submit" value="Save" name="">
+        <br>
+        <h5 class="display userlabel" id="useralertpass">Change password need re-login</h5>
+    </form>
+</div>
+
+<script>
+
+    document.getElementById('editUser').addEventListener('click', () => {
+
+        document.getElementById('username').classList.remove('display')
+        document.getElementById('buttonchange').classList.remove('display')
+        document.getElementById('useralert').classList.remove('display')
+        document.getElementById('editUser').classList.add('display')
+        document.getElementById('cancelEdit').classList.remove('display')
+    })
+    document.getElementById('cancelEdit').addEventListener('click', () => {
+        document.getElementById('username').classList.add('display')
+        document.getElementById('buttonchange').classList.add('display')
+        document.getElementById('useralert').classList.add('display')
+        document.getElementById('cancelEdit').classList.add('display')
+        document.getElementById('editUser').classList.remove('display')
+    })
+    document.getElementById('editPass').addEventListener('click', () => {
+        document.getElementById('password').classList.remove('display')
+        document.getElementById('password2').classList.remove('display')
+        document.getElementById('buttonchangepass').classList.remove('display')
+        document.getElementById('useralertpass').classList.remove('display')
+        document.getElementById('editPass').classList.add('display')
+        document.getElementById('cancelPass').classList.remove('display')
+    })
+    document.getElementById('cancelPass').addEventListener('click', () => {
+        document.getElementById('password').classList.add('display')
+        document.getElementById('password2').classList.add('display')
+        document.getElementById('buttonchangepass').classList.add('display')
+        document.getElementById('useralertpass').classList.add('display')
+        document.getElementById('cancelPass').classList.add('display')
+        document.getElementById('editPass').classList.remove('display')
+    })
+</script>
 
 {{/if}}
