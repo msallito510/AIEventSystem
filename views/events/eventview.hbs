@@ -1,18 +1,25 @@
-<div class="containerev">
-    {{> eventDetailsMenu}}
-    <div>
-        <ul class="listevent">
-            <li class="titleevent"> {{data.name}} </li>
+<div class="container-event-details">
+    {{> eventViewMenu}}
+    <div class="event-details">
+        <div>
+            {{#if canEdit}}
+            {{> buttonEdit}}
+            {{/if}}
+            <h1 class="titleevent"> {{data.name}}</h1>
+        </div>
+        <div class="event-list-details">
+            <ul>
+                <li class="locationevent">{{data.provincia}}</li>
+                <li class="locationevent">from : {{data.dateInit}} {{data.timeInit}} </li>
+                <li class="locationevent">to : {{data.dateEnd}} {{data.timeEnd}} </li>
+                <li class="locationevent">{{data.price}} € </li>
 
-            <li class="locationevent">{{data.provincia}}</li>
+            </ul>
+        </div>
+        <div>
+            <h3>Admin: {{data.admin}}</h3>
+        </div>
 
-            <li class="locationevent">from : {{data.dateInit}} {{data.timeInit}} </li>
-
-            <li class="locationevent">to : {{data.dateEnd}} {{data.timeEnd}} </li>
-
-            <li class="locationevent">{{data.price}} € </li>
-            creado por : {{data.admin}}
-        </ul>
     </div>
     <div>
         <form action="/events/assist" method="post">
@@ -28,14 +35,6 @@
     </div>
 </div>
 
-
-{{#if canEdit}}
-{{> buttonEdit}}
-{{/if}}
-
-
-<a class="btn" href="/events">Back</a>
-<br>
 {{#if isAdmin}}
 
 

@@ -31,7 +31,16 @@
   margin: 0 auto;
   margin-bottom: 20px;
 } */
-.listevent li {
+.event-details {
+  display: flex;
+  flex-direction: column;
+}
+.event-list-details {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.event-list-details li {
   list-style: none;
 }
 .titleevent,
