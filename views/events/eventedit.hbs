@@ -1,39 +1,53 @@
-<div class="eventcontaineradd">
+<div class="eventcontainer-add">
+    {{> eventViewMenu}}
     <form action="/events/edit" method="post">
+        <h2 class="input-label-add">EDIT THE EVENT INFO</h2>
+        <div>
+            <label class="input-label-add" for="name"> Name</label>
+            <div>
+                <input class="input-add" type="text" value="{{data.name}}" name="name" id="">
+            </div>
+        </div>
+        <div>
+            <label class="input-label-add" for="name"> Description</label>
+            <div>
+                <input class="input-add" type="text" value="{{data.description}}" name="description" id="">
+            </div>
+        </div>
+        <div>
+            <label class="input-label-add" for="name"> Location</label>
+            <div>
+                <input class="input-add" type="text" value="{{data.location}}" name="location" id="">
+                <input class="input-add" type="text" hidden value="{{data._id}}" name="id" id="">
+            </div>
+        </div>
 
-        <label class="titleevent" for="name"> Name</label>
-        <input class="" type="text" value="{{data.name}}" name="name" id="">
-        <label class="titleevent" for="name"> Description</label>
-        <input class="" type="text" value="{{data.description}}" name="description" id="">
-
-        <label class="titleevent" for="name"> Location</label>
-        <input class="" type="text" value="{{data.location}}" name="location" id="">
-        <input class="titleevent" type="text" hidden value="{{data._id}}" name="id" id="">
-
-        <h2>Event day</h2>
-        <h2 class="inputlabeladd">FROM</h2>
-
-
-        <input class="inputlabeladd" type="date" value="{{data.dateInit}}" id="appt" value="" name="datefrom">
-        <input class="inputlabeladd" type="time" value="{{data.timeInit}}" id="appt" name="timefrom">
-        <br>
-        <h2 class="inputlabeladd">TO</h2>
-        <input class="inputlabeladd" type="date" value="{{data.dateEnd}}" id="appt" name="dateto">
-        <input class="inputlabeladd" type="time" value="{{data.timeEnd}}" id="appt" name="timeto">
-        <br>
-        <h2>Price €</h2>
-        <input type="number" step=".01" value="{{data.price}}" class="inputadd" name="price" id="">
-        <button class="btn" type="submit">Go</button>
+        <h2 class="input-label-add">Event day</h2>
+        <div>
+            <h2 class="input-label-add">From</h2>
+            <input class="input-add" type="date" value="{{data.dateInit}}" id="appt" value="" name="datefrom">
+            <input class="input-add" type="time" value="{{data.timeInit}}" id="appt" name="timefrom">
+        </div>
+        <div>
+            <h2 class="input-label-add">To</h2>
+            <input class="input-add" type="date" value="{{data.dateEnd}}" id="appt" name="dateto">
+            <input class="input-add" type="time" value="{{data.timeEnd}}" id="appt" name="timeto">
+        </div>
 
 
+        <h2 class="input-label-add">Price €</h2>
+        <div>
+            <input type="number" step=".01" value="{{data.price}}" class="input-add" name="price" id="">
+        </div>
+        <div>
+            <button class="btn" type="submit">Submit</button>
+            <form action="/events/remove/{{data.id}}" method="post">
+
+                <button class="btn" type="submit">Delete</button>
+
+            </form>
+        </div>
         {{error}}
-    </form>
-</div>
-<div class="eventcontaineradd">
-    <form action="/events/remove/{{data.id}}" method="post">
 
-        <button class="btn" type="submit">Delete</button>
-</div>
-</form>
-</div>
+    </form>
 </div>

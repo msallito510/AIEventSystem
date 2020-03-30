@@ -1,35 +1,30 @@
 {{> eventsMenu}}
-<div class="eventcontaineradd">
-
-    <h3>
-
-    </h3>
-    <img class="imgeventshow" id='profileimage' src="/images/no_image_available.jpeg" alt="" srcset="">
-
+<div class="eventcontainer-profile">
+    <img class="profile-img" id='profileimage' src="/images/no_image_available.jpeg" alt="" srcset="">
 </div>
-<div class=" titleevent ">
-    <h3>My events </h3>
+<section class="container">
+    <div class="welcome">
+        <h3>My events </h3>
+    </div>
+    <div class="col-events">
+
+        <div class="containerev">
+            {{#each persodata}}
+            <div class="eventcontainer">
+
+                <div class="imageside">
+                    {{!-- 
+            <img class="profile-img" src="/images/no_image_available.jpeg" alt="" srcset=""> --}}
+
+                </div>
+                <div class="infoside">
+                    <p class="title-event">{{this.name}}</p>
+                    <p class="locationevent">{{this.location}}</p>
 
 
-</div>
-<div class="eventcontaineradd">
-
-    {{#each persodata}}
-    <div class="eventcontainer">
-
-        <div class="imageside">
-            {{!-- 
-            <img class="imgeventshow" src="/images/no_image_available.jpeg" alt="" srcset=""> --}}
-
-        </div>
-        <div class="infoside">
-            <p class="titleevent">{{this.name}}</p>
-            <p class="locationevent">{{this.location}}</p>
-
-
-            <a class=" btnpink" href="/events/view/{{this.id}}">GO TO EVENT</a>
-        </div>
-        {{!-- <ul class="listevent">
+                    <a class=" btnpink" href="/events/view/{{this.id}}">GO TO EVENT</a>
+                </div>
+                {{!-- <ul class="listevent">
 
             <li class="titleevent"> {{this.name}} </li>
 
@@ -38,21 +33,29 @@
            
         </ul> --}}
 
+            </div>
+            {{/each}}
+        </div>
     </div>
-    {{/each}}
-</div>
+
+
+</section>
 
 {{#if isAdmin}}
 
 
-<div class="titleevent">
-    <h3>Private </h3>
+<div class="title-event">
+
+    <div>
+        <h3>Settings</h3>
+    </div>
+    <div>
+        <h3 class="center">User Information</h3>
+    </div>
 
 
 </div>
-<div class="private">
-    <h3 class="center">User Information</h3>
-</div>
+
 <div class="profile">
     <form action="/profile/edituser" method="post">
         <h3 class="userlabel center">{{error}}</h3>
@@ -83,9 +86,14 @@
         <input name="nametoedit" hidden value="{{datauser.username}}">
         <h5>Change Photo</h5>
 
-        <div class="custom-file mb-3">
+        <div class="open-local-file">
             <input type="file" name="picture" accept="application/x-zip-compressed,image/*">
-            <input class="btn btn-primary" type="submit" value="submit">
+        </div>
+
+        <div class=" profile-selfie">
+            <input type="image" src="/images/camera.png" value="submit" />
+        </div>
+
     </form>
 
 

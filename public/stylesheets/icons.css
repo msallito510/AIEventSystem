@@ -9,10 +9,10 @@
 .menu li a.like:before {
   content: "\f004";
 }
-/* .menu li a.edit:before {
+.menu li a.edit:before {
   content: "\f040";
-} */
-.menu li a.profile:before {
+}
+.menu li a.prof:before {
   content: "\f007";
 }
 .menu li a.signout:before {
@@ -24,7 +24,7 @@
 .menu li a.back:before {
   content: "\f060";
 }
-.icon  {
-  /* content: "\f040"; */
+.icon i a.edit:before {
+  content: "\f040";
   width: 1.2em;
 }

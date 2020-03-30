@@ -2,12 +2,14 @@
     {{> eventViewMenu}}
     <div class="event-details">
         <div>
+            <h1 class="title-event"> {{data.name}}</h1>
+        </div>
+        <div class="icon">
             {{#if canEdit}}
-            {{> buttonEdit}}
 
+            <i>{{> buttonEdit}}</i>
 
             {{/if}}
-            <h1 class="titleevent"> {{data.name}}</h1>
         </div>
         <div class="event-list-details">
             <ul>
@@ -18,7 +20,9 @@
 
             </ul>
         </div>
+
         <div>
+            {{!-- <<<<<<< DANI --}}
             <h3>Tags</h3>
             {{#each data.tags}}
             {{this}}
@@ -29,35 +33,52 @@
 
             <h3>Admin: {{data.admin}}</h3>
         </div>
-
-    </div>
-    <div>
+        {{!-- ======= --}}
         <form action="/events/assist" method="post">
             <input type="text" name="id" value="{{data.id}}" hidden>
 
-            <button class="btnpink" type="submit">Assist</button>
+
+            <div class="card-media-body">
+                <div class="card-meda-header">
+                    <div>
+                        <span class="card-media-body-supporting-bottom-text subtle">#Music #Party</span>
+                    </div>
+
+                    <div>
+                        <button type="submit" style="background-color: none;"><a href="" class="card-media-link">GET
+                                TICKETS</a></button>
+                    </div>
+                </div>
+                <div>
+                    <h3>Social</h3>
+
+                    <ul class="card-media-object-social-list">
+                        <li>
+                            <a href="/profile/{{data.admin}}">{{data.admin}}</a>
+                            <img src="https://s10.postimg.cc/3rjjbzcvd/profile_f.jpg" class="">
+                        </li>
+                        {{#each data.members}}
+                        <li>
+                            <a href="/profile/{{this.username}}">{{this.username}}</a>
+                            <img src="https://s16.postimg.cc/b0j0djh79/profile_0_f.jpg" class="">
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
         </form>
-        <form action="/events/cancel" method="post">
+        {{!-- <form action="/events/cancel" method="post">
             <input type="text" name="id" value="{{data.id}}" hidden>
 
             <button class="btnpink" type="submit">Cancel</button>
-        </form>
+        </form> --}}
+
     </div>
 </div>
 
 {{#if isAdmin}}
-
-
-{{> eventadmin}}
-
-
+<div class="events-media">
+    {{> eventadmin}}
+</div>
 {{/if}}
-
-
-<h3>Members</h3>
-{{#each data.members}}
-{{this.username}}
-<a href="/profile/{{this.username}}">Ver</a>
-
-
-{{/each}}
+</div>

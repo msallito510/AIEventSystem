@@ -1,84 +1,88 @@
-<div class="eventcontaineradd">
-
+{{> menu}}
+<div class="eventcontainer-add">
     <form action="add" method="post">
-        <h2>Info</h2>
-        <label class="inputlabeladd" for="name"> Name</label>
-        <input class="inputadd" type="text" name="name" id="">
-        <br>
-        <label class="inputlabeladd" for="name"> Description</label>
-        <input class="inputadd" type="text" name="description" id="">
-        <br>
-        <h2 class="inputlabeladd">Place</h2>
-        <select class="inputadd" name="location" size="1">
-            <option value='selecciona'>Selecciona</option>
-            <option value='A Coruña'>A Coruña</option>
-            <option value='álava'>álava</option>
-            <option value='Albacete'>Albacete</option>
-            <option value='Alicante'>Alicante</option>
-            <option value='Almería'>Almería</option>
-            <option value='Asturias'>Asturias</option>
-            <option value='ávila'>Ávila</option>
-            <option value='Badajoz'>Badajoz</option>
-            <option value='Barcelona'>Barcelona</option>
-            <option value='Burgos'>Burgos</option>
-            <option value='Cáceres'>Cáceres</option>
-            <option value='Cádiz'>Cádiz</option>
-            <option value='Cantabria'>Cantabria</option>
-            <option value='Castellón'>Castellón</option>
-            <option value='Ceuta'>Ceuta</option>
-            <option value='Ciudad Real'>Ciudad Real</option>
-            <option value='Córdoba'>Córdoba</option>
-            <option value='Cuenca'>Cuenca</option>
-            <option value='Gerona'>Gerona</option>
-            <option value='Girona'>Girona</option>
-            <option value='Las Palmas'>Las Palmas</option>
-            <option value='Granada'>Granada</option>
-            <option value='Guadalajara'>Guadalajara</option>
-            <option value='Guipúzcoa'>Guipúzcoa</option>
-            <option value='Huelva'>Huelva</option>
-            <option value='Huesca'>Huesca</option>
-            <option value='Jaén'>Jaén</option>
-            <option value='La Rioja'>La Rioja</option>
-            <option value='León'>León</option>
-            <option value='Lleida'>Lleida</option>
-            <option value='Lugo'>Lugo</option>
-            <option value='Madrid'>Madrid</option>
-            <option value='Malaga'>Málaga</option>
-            <option value='Mallorca'>Mallorca</option>
-            <option value='Melilla'>Melilla</option>
-            <option value='Murcia'>Murcia</option>
-            <option value='Navarra'>Navarra</option>
-            <option value='Orense'>Orense</option>
-            <option value='Palencia'>Palencia</option>
-            <option value='Pontevedra'>Pontevedra</option>
-            <option value='Salamanca'>Salamanca</option>
-            <option value='Segovia'>Segovia</option>
-            <option value='Sevilla'>Sevilla</option>
-            <option value='Soria'>Soria</option>
-            <option value='Tarragona'>Tarragona</option>
-            <option value='Tenerife'>Tenerife</option>
-            <option value='Teruel'>Teruel</option>
-            <option value='Toledo'>Toledo</option>
-            <option value='Valencia'>Valencia</option>
-            <option value='Valladolid'>Valladolid</option>
-            <option value='Vizcaya'>Vizcaya</option>
-            <option value='Zamora'>Zamora</option>
-            <option value='Zaragoza'>Zaragoza</option>
-        </select>
-        <h2>Event day</h2>
-        <h2 class="inputlabeladd">FROM</h2>
-        <input class="inputlabeladd" type="date" id="appt" name="datefrom">
-        <input class="inputlabeladd" type="time" id="appt" name="timefrom">
-        <br>
-        <h2 class="inputlabeladd">TO</h2>
-        <input class="inputlabeladd" type="date" id="appt" name="dateto">
-        <input class="inputlabeladd" type="time" id="appt" name="timeto">
-        <h2>Price €</h2>
-        <input type="number" step=".01" value="0.00" class="inputadd" name="price" id="">
-        <br>
-
-        <button class="btn" type="submit">Go</button>
-
+        <h2 class="input-label-add">ADD THE EVENT INFO</h2>
+        <div>
+            <input class="input-add" type="text" name="name" id="" placeholder="Event name">
+        </div>
+        <div>
+            <input class="input-add" type="text" name="description" id="" placeholder="Description">
+        </div>
+        <div>
+            <select class="input-add" name="location" size="1">
+                <option value='select'>Select a location</option>
+                <option value='A Coruña'>A Coruña</option>
+                <option value='álava'>álava</option>
+                <option value='Albacete'>Albacete</option>
+                <option value='Alicante'>Alicante</option>
+                <option value='Almería'>Almería</option>
+                <option value='Asturias'>Asturias</option>
+                <option value='ávila'>Ávila</option>
+                <option value='Badajoz'>Badajoz</option>
+                <option value='Barcelona'>Barcelona</option>
+                <option value='Burgos'>Burgos</option>
+                <option value='Cáceres'>Cáceres</option>
+                <option value='Cádiz'>Cádiz</option>
+                <option value='Cantabria'>Cantabria</option>
+                <option value='Castellón'>Castellón</option>
+                <option value='Ceuta'>Ceuta</option>
+                <option value='Ciudad Real'>Ciudad Real</option>
+                <option value='Córdoba'>Córdoba</option>
+                <option value='Cuenca'>Cuenca</option>
+                <option value='Gerona'>Gerona</option>
+                <option value='Girona'>Girona</option>
+                <option value='Las Palmas'>Las Palmas</option>
+                <option value='Granada'>Granada</option>
+                <option value='Guadalajara'>Guadalajara</option>
+                <option value='Guipúzcoa'>Guipúzcoa</option>
+                <option value='Huelva'>Huelva</option>
+                <option value='Huesca'>Huesca</option>
+                <option value='Jaén'>Jaén</option>
+                <option value='La Rioja'>La Rioja</option>
+                <option value='León'>León</option>
+                <option value='Lleida'>Lleida</option>
+                <option value='Lugo'>Lugo</option>
+                <option value='Madrid'>Madrid</option>
+                <option value='Malaga'>Málaga</option>
+                <option value='Mallorca'>Mallorca</option>
+                <option value='Melilla'>Melilla</option>
+                <option value='Murcia'>Murcia</option>
+                <option value='Navarra'>Navarra</option>
+                <option value='Orense'>Orense</option>
+                <option value='Palencia'>Palencia</option>
+                <option value='Pontevedra'>Pontevedra</option>
+                <option value='Salamanca'>Salamanca</option>
+                <option value='Segovia'>Segovia</option>
+                <option value='Sevilla'>Sevilla</option>
+                <option value='Soria'>Soria</option>
+                <option value='Tarragona'>Tarragona</option>
+                <option value='Tenerife'>Tenerife</option>
+                <option value='Teruel'>Teruel</option>
+                <option value='Toledo'>Toledo</option>
+                <option value='Valencia'>Valencia</option>
+                <option value='Valladolid'>Valladolid</option>
+                <option value='Vizcaya'>Vizcaya</option>
+                <option value='Zamora'>Zamora</option>
+                <option value='Zaragoza'>Zaragoza</option>
+            </select>
+        </div>
+        <div>
+            <h2 class="input-label-add">From</h2>
+            <input class="input-add" type="date" id="appt" name="datefrom">
+            <input class="input-add" type="time" id="appt" name="timefrom">
+        </div>
+        <div>
+            <h2 class="input-label-add">To</h2>
+            <input class="input-add" type="date" id="appt" name="dateto">
+            <input class="input-add" type="time" id="appt" name="timeto">
+        </div>
+        <div>
+            <h2 class="input-label-add">Price €</h2>
+            <input type="number" step=".01" value="0.00" class="input-add" name="price" id="">
+        </div>
+        <div>
+            <button class="btn" type="submit">Submit</button>
+        </div>
         {{error}}
     </form>
 

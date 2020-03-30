@@ -37,32 +37,7 @@
   height: 100%;
   font-size: 1.4em;
 }
-/* 
-.menu li a.search:before {
-  content: "\f002";
-}
-.menu li a.add:before {
-  content: "\f067";
-}
-.menu li a.like:before {
-  content: "\f004";
-}
-.menu li a.edit:before {
-  content: "\f040";
-}
-.menu li a.profile:before {
-  content: "\f007";
-}
-.menu li a.signout:before {
-  content: "\f08b";
-}
-.menu li a.home:before {
-  content: "\f039";
-}
-.menu li a.back:before {
-  content: "\f060";
-}
-*/
+
 .menu-bar li a:hover,
 .menu li a:hover,
 .menu li:first-child a {

@@ -2,9 +2,11 @@
 @import url("//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css");
 
 body {
+  position: relative;
+  left: 4rem;
   margin: 0;
   padding: 0;
-  width: 100%;
+  width: 95%;
   height: 100%;
   font-size: 100%;
   line-height: 1.45;

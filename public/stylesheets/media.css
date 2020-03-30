@@ -1,4 +1,8 @@
 @media all and (max-width: 500px) {
+  html {
+    width: 85%;
+    margin: -2rem;
+  }
   body {
     padding: 15px;
   }
@@ -54,6 +58,9 @@
     position: relative;
     top: 4rem;
   }
+  .card-media-link {
+    right: 2rem;
+  }
 
   .menu {
     height: 5em;
@@ -90,6 +97,23 @@
   }
   .eventcontainer {
     height: 30vh;
+  }
+  .eventcontainer-add {
+    text-align: center;
+    box-shadow: 0px 0px 13px 5px rgba(122, 122, 122, 1);
+    font-family: "Lato", sans-serif;
+    padding: 4rem;
+    width: 25rem;
+    left: -3rem;
+  }
+  .open-local-file input {
+    border: rgba(128, 128, 128, 0.233) solid 2px;
+    height: 3rem;
+    width: 6.5rem;
+  }
+  .profile-img {
+    width: 10rem;
+    margin: 6rem 0 5rem;
   }
 
   /* .titleevent,
