@@ -54,7 +54,7 @@ const eventSchema = new Schema({
   admin: {
     type: String
   },
-
+  tags: [{ type: String }],
   members: [{ type: Schema.Types.ObjectId, ref: 'User' }],
 
 

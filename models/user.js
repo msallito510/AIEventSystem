@@ -17,8 +17,7 @@ const userSchema = new Schema(
       required: [true, 'the password is required.']
     },
     selfie: {
-      type: String, // image url
-      required: [true, 'the selfie is required.']
+      data: Buffer, contentType: String
     },
     role: {
       type: String,

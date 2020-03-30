@@ -1,9 +1,54 @@
-<div class="containerevent">
-    <h4>Buscar Por ciudad</h4>
+<div class="container-event-details">{{> eventsMenu}}
+    <div class="containerevent">
+        <div class="private">
+            <h3 class="center">By city</h3>
+        </div>
+        <form method="post" action="finder/result/" + {{data}}>
+            <div class="profile event-details">
+                <h5>Select city</h5>
 
-    {{#each data}}
-    <a href="finder/result/{{this}}/">{{this}}</a>
+                <select name="city" class="bycity" size="1" id="">
 
-    <br>
-    {{/each}}
+                    {{#each data}}
+                    <option value="{{this}}">{{this}}</option>
+
+                    {{!-- <a class="bycity" href="finder/result/{{this}}/">{{this}}</a> --}}
+
+
+                    <br>
+                    {{/each}}
+                </select>
+
+
+                <input type="submit" value="Find">
+
+            </div>
+
+        </form>
+        <div class="private">
+            <h3 class="center">By TagName</h3>
+        </div>
+        <form method="post" action="finder/result/" + {{datatag}}>
+            <div class="profile event-details">
+                <h5>Select TAG</h5>
+
+                <select name="tag" class="bycity" size="1" id="">
+
+                    {{#each datatag}}
+                    <option value="{{this}}">{{this}}</option>
+
+                    {{!-- <a class="bycity" href="finder/result/{{this}}/">{{this}}</a> --}}
+
+
+                    <br>
+                    {{/each}}
+                </select>
+
+
+                <input type="submit" value="Find">
+
+            </div>
+
+        </form>
+    </div>
 </div>

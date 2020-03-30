@@ -19,7 +19,7 @@ router.get("/", function (req, res, next) {
   let name = datausr.username;
   Event.find({ admin: name }).then(persodata => {
     Event.find({}).then(data => {
-      res.render("events/eventshow", { data: data, persodata: persodata });
+      res.render("events/eventshow", { title: name, data: data, persodata: persodata });
     });
   });
 });
@@ -40,7 +40,8 @@ router.post("/add", function (req, res, next) {
     dateto,
     timefrom,
     timeto,
-    price
+    price,
+
   } = req.body;
 
   if (name == "" || description == "" || location == "") {
@@ -56,7 +57,10 @@ router.post("/add", function (req, res, next) {
       timeInit: timefrom,
       timeEnd: timeto,
       price: price,
-      admin: admin
+      admin: admin,
+      tags: ["Cumpleaños", "Familiar"],
+
+
     });
     res.redirect("/events");
   }
@@ -193,7 +197,7 @@ router.get("/likes", function (req, res, next) {
     let name = req.cookies["datauser"];
     let id = req.params.id;
     Event.find({ likes: name.id }).then(data => {
-      res.render("events/eventLikes", { data: data, title: name });
+      res.render("events/eventLikes", { data: data, title: name.username });
     });
   }
 });

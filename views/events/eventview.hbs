@@ -4,6 +4,8 @@
         <div>
             {{#if canEdit}}
             {{> buttonEdit}}
+
+
             {{/if}}
             <h1 class="titleevent"> {{data.name}}</h1>
         </div>
@@ -17,6 +19,14 @@
             </ul>
         </div>
         <div>
+            <h3>Tags</h3>
+            {{#each data.tags}}
+            {{this}}
+
+
+            {{/each}}
+
+
             <h3>Admin: {{data.admin}}</h3>
         </div>
 

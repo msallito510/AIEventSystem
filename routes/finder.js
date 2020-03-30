@@ -16,25 +16,53 @@ router.use('/', function (req, res, next) {
 
 router.get("/", function (req, res, next) {
 
-    Event.distinct('location').then((data) => {
+    let datausr = req.cookies["datauser"];
+    let name = datausr.username;
+    Event.distinct('tags').then((datatag) => {
 
 
-        return data
+        return datatag;
+    }).then((datatag) => {
 
-    }).then((data) => {
 
-        res.render("finder/main", { data: data });
+        Event.distinct('location').then((data) => {
+
+            return data;
+
+        }).then((data) => {
+
+            res.render("finder/main", { data: data, datatag: datatag, title: name });
+
+
+        })
 
 
     })
+
+
 });
 
-router.get("/result/:location", function (req, res, next) {
-    let location = req.params.location
+router.post("/result", function (req, res, next) {
 
-    Event.find({ location: location }).then(data => {
-        res.render("events/eventshow", { data: data });
-    });
+
+    let location = req.body.city
+    if (location) {
+        Event.find({ location: location }).then(data => {
+            res.render("events/eventshow", { data: data });
+        }).catch(() => {
+            res.render("finder/main", { data: data, title: name });
+        })
+
+    }
+    let tag = req.body.tag
+    if (tag) {
+        Event.find({ tags: tag }).then(data => {
+            res.render("events/eventshow", { data: data });
+        }).catch(() => {
+            res.render("finder/main", { data: data, title: name });
+        })
+
+    }
 
 });
 module.exports = router;
