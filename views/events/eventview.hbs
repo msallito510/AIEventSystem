@@ -1,21 +1,84 @@
-<div class="eventcontainer">
-    <ul class="listevent">
+<div class="container-event-details">
+    {{> eventViewMenu}}
+    <div class="event-details">
+        <div>
+            <h1 class="title-event"> {{data.name}}</h1>
+        </div>
+        <div class="icon">
+            {{#if canEdit}}
 
-        <li class="titleevent"> {{data.name}} </li>
+            <i>{{> buttonEdit}}</i>
 
-        <li class="locationevent">{{data.provincia}}</li>
+            {{/if}}
+        </div>
+        <div class="event-list-details">
+            <ul>
+                <li class="locationevent">{{data.provincia}}</li>
+                <li class="locationevent">from : {{data.dateInit}} {{data.timeInit}} </li>
+                <li class="locationevent">to : {{data.dateEnd}} {{data.timeEnd}} </li>
+                <li class="locationevent">{{data.price}} € </li>
 
-        <li class="locationevent">de : {{data.dateInit}} {{data.timeInit}} </li>
+            </ul>
+        </div>
 
-        <li class="locationevent">a : {{data.dateEnd}} {{data.timeEnd}} </li>
-
-        <li class="locationevent">{{data.price}} € </li>
-        creado por : {{data.admin}}
-    </ul>
-
-
+        <div>
+            {{!-- <<<<<<< DANI --}}
+            <h3>Tags</h3>
+            {{#each data.tags}}
+            {{this}}
 
 
+            {{/each}}
+
+
+            <h3>Admin: {{data.admin}}</h3>
+        </div>
+        {{!-- ======= --}}
+        <form action="/events/assist" method="post">
+            <input type="text" name="id" value="{{data.id}}" hidden>
+
+
+            <div class="card-media-body">
+                <div class="card-meda-header">
+                    <div>
+                        <span class="card-media-body-supporting-bottom-text subtle">#Music #Party</span>
+                    </div>
+
+                    <div>
+                        <button type="submit" style="background-color: none;"><a href="" class="card-media-link">GET
+                                TICKETS</a></button>
+                    </div>
+                </div>
+                <div>
+                    <h3>Social</h3>
+
+                    <ul class="card-media-object-social-list">
+                        <li>
+                            <a href="/profile/{{data.admin}}">{{data.admin}}</a>
+                            <img src="https://s10.postimg.cc/3rjjbzcvd/profile_f.jpg" class="">
+                        </li>
+                        {{#each data.members}}
+                        <li>
+                            <a href="/profile/{{this.username}}">{{this.username}}</a>
+                            <img src="https://s16.postimg.cc/b0j0djh79/profile_0_f.jpg" class="">
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </form>
+        {{!-- <form action="/events/cancel" method="post">
+            <input type="text" name="id" value="{{data.id}}" hidden>
+
+            <button class="btnpink" type="submit">Cancel</button>
+        </form> --}}
+
+    </div>
 </div>
-<a class=" btnpink" href="/events/edit/{{data.id}}">EDIT</a>
-<a class="btn" href="/events">Back</a>
+
+{{#if isAdmin}}
+<div class="events-media">
+    {{> eventadmin}}
+</div>
+{{/if}}
+</div>

@@ -1,0 +1,144 @@
+@media all and (max-width: 500px) {
+  html {
+    width: 85%;
+    margin: -2rem;
+  }
+  body {
+    padding: 15px;
+  }
+  h2 {
+    position: relative;
+    top: 4rem;
+  }
+  .container div {
+    position: relative;
+    margin-top: 1rem;
+    bottom: 1rem;
+  }
+  .container h3 {
+    position: relative;
+    margin-top: 0rem;
+    bottom: 4rem;
+  }
+  .container h2 {
+    position: absolute;
+    bottom: 8rem;
+  }
+  .welcome h2 {
+    position: initial;
+  }
+  .welcome h3 {
+    bottom: 9rem;
+  }
+  .title h1 {
+    position: relative;
+    bottom: 8rem;
+  }
+  .title p {
+    position: absolute;
+    bottom: 5rem;
+  }
+  .title a {
+    position: absolute;
+    top: 15rem;
+  }
+  .bg-image {
+    height: 36rem;
+    text-align: center;
+  }
+  .bg-image-2 {
+    height: 20rem;
+    text-align: inherit !important;
+  }
+  .btnpink {
+    display: flex;
+    flex-direction: column;
+  }
+  .container-event-details {
+    position: relative;
+    top: 4rem;
+  }
+  .card-media-link {
+    right: 2rem;
+  }
+
+  .menu {
+    height: 5em;
+    width: 100%;
+  }
+  .menu li {
+    display: inline-block;
+    float: left;
+  }
+  .menu-bar li a {
+    width: 100%;
+  }
+  .menu-bar {
+    width: 100%;
+    left: 0;
+    height: 0;
+  }
+  .open {
+    width: 100%;
+    height: auto;
+  }
+  .para {
+    padding-left: 5px;
+  }
+
+  .col-events {
+    width: 22.5rem;
+  }
+  .containerev {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 5rem;
+  }
+  .eventcontainer {
+    height: 30vh;
+  }
+  .eventcontainer-add {
+    text-align: center;
+    box-shadow: 0px 0px 13px 5px rgba(122, 122, 122, 1);
+    font-family: "Lato", sans-serif;
+    padding: 4rem;
+    width: 25rem;
+    left: -3rem;
+  }
+  .open-local-file input {
+    border: rgba(128, 128, 128, 0.233) solid 2px;
+    height: 3rem;
+    width: 6.5rem;
+  }
+  .profile-img {
+    width: 10rem;
+    margin: 6rem 0 5rem;
+  }
+
+  /* .titleevent,
+  .locationevent {
+    font-size: 0.6em;
+  }
+
+  .infoside {
+    display: flex;
+    flex-direction: column;
+    height: 5rem;
+    width: 5rem;
+  } */
+}
+@media screen and (max-height: 34em) {
+  .menu li,
+  .menu-bar {
+    font-size: 70%;
+  }
+}
+@media screen and (max-height: 34em) and (max-width: 500px) {
+  .menu {
+    height: 3.5em;
+  }
+}
+
+@media only screen and (max-device-width: 425px) {
+}

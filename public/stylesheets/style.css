@@ -2,9 +2,11 @@
 @import url("//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css");
 
 body {
+  position: relative;
+  left: 4rem;
   margin: 0;
   padding: 0;
-  width: 100%;
+  width: 95%;
   height: 100%;
   font-size: 100%;
   line-height: 1.45;
@@ -72,7 +74,7 @@ focus:active {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
+  margin: 5rem auto;
   width: 90%;
   max-width: 900px;
   padding: 1rem;
@@ -154,7 +156,7 @@ header h2 {
 .col-events {
   display: flex;
   flex-direction: row;
-  width: 29%;
+  width: 80%;
 }
 
 .details {
@@ -283,7 +285,8 @@ footer:hover {
 /* ========= login ========= */
 /* ========================= */
 
-.title h1 {
+.title h1,
+.login h1 {
   margin: 0;
   padding: 0;
   font-weight: bold;
@@ -293,7 +296,8 @@ footer:hover {
   font-family: "Cinzel Decorative";
 }
 
-.title p {
+.title p,
+.login p {
   font-family: "Cinzel Decorative", cursive;
   font-size: 1rem;
 }

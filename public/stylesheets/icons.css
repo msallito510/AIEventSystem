@@ -1,0 +1,30 @@
+@import url("//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css");
+
+.menu li a.search:before {
+  content: "\f002";
+}
+.menu li a.add:before {
+  content: "\f067";
+}
+.menu li a.like:before {
+  content: "\f004";
+}
+.menu li a.edit:before {
+  content: "\f040";
+}
+.menu li a.prof:before {
+  content: "\f007";
+}
+.menu li a.signout:before {
+  content: "\f08b";
+}
+.menu li a.home:before {
+  content: "\f039";
+}
+.menu li a.back:before {
+  content: "\f060";
+}
+.icon i a.edit:before {
+  content: "\f040";
+  width: 1.2em;
+}

@@ -1,0 +1,21 @@
+{{#if this.likes }}
+
+
+
+<form action="/events/like/{{this.id}}/" method="post">
+  <button type="submit"> <i class="fa fa-heart fa_custom fa-2x"></i></button>
+
+
+</form>
+{{else}}
+
+<form action="/events/like/{{this.id}}/" method="post">
+
+
+
+  <button type="submit"> <i class="fa fa-heart-o fa-2x"></i></button>
+
+
+</form>
+
+{{/if}}

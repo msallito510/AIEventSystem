@@ -1,6 +1,8 @@
 <header class="bg-image">
   <div class="container">
-    <h2>Welcome {{title}}</h2>
+    <div class="welcome">
+      <h2>Welcome {{title}}</h2>
+    </div>
 
     {{> menu}}
   </div>
@@ -11,24 +13,14 @@
   <a href="/events" class="btn">your Events!</a>
 
   {{/if}}
-  <div>
-    <h3>Event List</h3>
-    <p>{{event.name}}</p>
 
+  <div class="welcome">
+    <h3>Event List</h3>
   </div>
   <div class="col-events">
-    <div class="col-events">
-      {{!-- {{> events}} --}}
-    </div>
+    {{> eventListAll}}
+  </div>
+
 </section>
 
-<footer>
-  <div class="container">
-    <ul>
-      <li><a href="#">Weblinks</a></li>
-      <li><a href="#">Contact</a></li>
-      <li><a href="#">Mainpage</a></li>
-    </ul>
-    <p>AI Access System. Ironhack - 2020 -</p>
-  </div>
-</footer>
+{{> footer}}

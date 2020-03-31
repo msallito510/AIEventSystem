@@ -1,0 +1,22 @@
+<div class="containerev">
+
+    {{#each data}}
+    <div class="eventcontainer">
+
+        <div class="imageside">
+            {{!-- 
+            <img class="imgeventshow" src="/images/no_image_available.jpeg" alt="" srcset=""> --}}
+
+        </div>
+        <div class="infoside">
+            {{> activeLike}}
+
+            <p class="title-event">{{this.name}}</p>
+            <p class="locationevent">{{this.location}}</p>
+
+
+            <a class="btnpink" href="/events/view/{{this.id}}">GO TO EVENT</a>
+        </div>
+    </div>
+    {{/each}}
+</div>
