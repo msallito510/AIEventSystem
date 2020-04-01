@@ -3,7 +3,7 @@ var router = express.Router();
 const mongoose = require("mongoose");
 const Event = require("../models/events");
 
-router.use("/", function (req, res, next) {
+router.use("/", function(req, res, next) {
   if (req.cookies["datauser"]) {
     let datausr = req.cookies["datauser"];
     let name = datausr.username;
@@ -14,21 +14,25 @@ router.use("/", function (req, res, next) {
   }
 });
 
-router.get("/", function (req, res, next) {
+router.get("/", function(req, res, next) {
   let datausr = req.cookies["datauser"];
   let name = datausr.username;
   Event.find({ admin: name }).then(persodata => {
     Event.find({}).then(data => {
-      res.render("events/eventshow", { title: name, data: data, persodata: persodata });
+      res.render("events/eventshow", {
+        title: name,
+        data: data,
+        persodata: persodata
+      });
     });
   });
 });
 
-router.get("/add", function (req, res, next) {
+router.get("/add", function(req, res, next) {
   res.render("events/eventadd");
 });
 
-router.post("/add", function (req, res, next) {
+router.post("/add", function(req, res, next) {
   let datausr = req.cookies["datauser"];
   let admin = datausr.username;
   const {
@@ -40,8 +44,7 @@ router.post("/add", function (req, res, next) {
     dateto,
     timefrom,
     timeto,
-    price,
-
+    price
   } = req.body;
 
   if (name == "" || description == "" || location == "") {
@@ -58,15 +61,13 @@ router.post("/add", function (req, res, next) {
       timeEnd: timeto,
       price: price,
       admin: admin,
-      tags: ["Cumpleaños", "Familiar"],
-
-
+      tags: ["Cumpleaños", "Familiar"]
     });
     res.redirect("/events");
   }
 });
 
-router.get("/view/:id/", function (req, res, next) {
+router.get("/view/:id/", function(req, res, next) {
   let id = req.params.id;
   let datausr = req.cookies["datauser"];
   let usernow = datausr.username;
@@ -97,14 +98,14 @@ router.get("/view/:id/", function (req, res, next) {
       }
     });
 });
-router.get("/edit/:id/", function (req, res, next) {
+router.get("/edit/:id/", function(req, res, next) {
   let id = req.params.id;
   Event.findOne({ _id: id }).then(data => {
     res.render("events/eventedit", { data: data });
   });
 });
 
-router.post("/edit", function (req, res, next) {
+router.post("/edit", function(req, res, next) {
   const {
     name,
     description,
@@ -149,13 +150,13 @@ router.post("/edit", function (req, res, next) {
 //   });
 // });
 
-router.post("/remove/:id/", function (req, res, next) {
+router.post("/remove/:id/", function(req, res, next) {
   let id = req.params.id;
   Event.findByIdAndRemove({ _id: id }).then(data => {
     res.redirect("/events");
   });
 });
-router.post("/cancel", function (req, res, next) {
+router.post("/cancel", function(req, res, next) {
   let datausr = req.cookies["datauser"];
   let usernow = datausr.username;
   let { id } = req.body;
@@ -167,16 +168,15 @@ router.post("/cancel", function (req, res, next) {
   });
 });
 
-router.post("/assist", function (req, res, next) {
+router.post("/assist", function(req, res, next) {
   let datausr = req.cookies["datauser"];
   let usernow = datausr.username;
   let { id } = req.body;
 
-
   Event.findOne({ _id: id, members: datausr._id })
     .then(data => {
       if (!data) {
-        console.log("no hay data")
+        console.log("no hay data");
         Event.findByIdAndUpdate(
           { _id: id },
           { $push: { members: datausr._id } }
@@ -192,7 +192,7 @@ router.post("/assist", function (req, res, next) {
     });
 });
 
-router.get("/likes", function (req, res, next) {
+router.get("/likes", function(req, res, next) {
   if (req.cookies["datauser"]) {
     let name = req.cookies["datauser"];
     let id = req.params.id;
@@ -202,14 +202,12 @@ router.get("/likes", function (req, res, next) {
   }
 });
 
-router.post("/like/:id/", function (req, res, next) {
+router.post("/like/:id/", function(req, res, next) {
   let id = req.params.id;
   let name = req.cookies["datauser"];
   Event.findOne({ _id: id, likes: name.id })
     .then(data => {
       if (!data) {
-
-
         Event.findByIdAndUpdate(
           { _id: id },
           { $push: { likes: name.id } }

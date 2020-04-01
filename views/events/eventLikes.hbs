@@ -1,45 +1,27 @@
 <header class="bg-image">
   <div class="container">
-    <h2>This are your events you like</h2>
-    {{> menu}}
+    <div class="welcome">
+      <h2>This are your events you like</h2>
+      {{> menu}}
+    </div>
   </div>
 </header>
 
 <section class="container">
-  <div>
+
+  <div class="welcome container-like">
     <h3>Event List</h3>
-    <div class="eventcontainer">
-      {{#each data}}
-      <div class="imageside">
-        {{!-- 
-                  <img class="imgeventshow" src="/images/no_image_available.jpeg" alt="" srcset=""> --}}
-
-      </div>
-      <div class="infoside">
-        <p class="title-event">{{this.name}}</p>
-        <p class="locationevent">{{this.location}}</p>
-
-
-        <a class=" btnpink" href="/events/view/{{this.id}}">GO TO EVENT</a>
-      </div>
-      {{!-- <ul class="listevent">
-      
-                  <li class="titleevent"> {{this.name}} </li>
-      
-                  <li class="locationevent">{{this.provincia}}</li>
-                  <h4><a class="btn" href="/events/edit/{{this.id}}">EDIT</a></h4>
-                 
-              </ul> --}}
-
-      {{/each}}
-    </div>
-
   </div>
+
   <div class="col-events">
-    {{#if title}}
+    {{#if data}}
+
+    {{> eventListAll}}
 
     {{else}}
-    <p>You do not like any event yet...</p>
+    <div class="emtpy-events">
+      <p>You have not given any LIKE for an event.</p>
+    </div>
     {{/if}}
   </div>
 </section>

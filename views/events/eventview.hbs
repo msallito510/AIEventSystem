@@ -5,35 +5,29 @@
         <div class="event-details"></div>
         <div>
             <h1 class="title-event"> {{data.name}}</h1>
-
             {{#if canEdit}}
             <div class="icon">
-                <i class="fa fa-pencil">{{> buttonEdit}}</i>
+
+                <a class="edit" href="/events/edit/{{data.id}}"><i class="fa fa-pencil"></i></a>
             </div>
-
-
             {{/if}}
         </div>
-
         <div class="slideshow-container slide">
-            <img src="http://placeimg.com/625/225/any" />
-            <img src="http://placeimg.com/625/225/animals" />
-            <img src="http://placeimg.com/625/225/arch" />
+            <img src="http://placeimg.com/625/225/tech" />
+            <img src="http://placeimg.com/625/226/tech" />
+            <img src="http://placeimg.com/625/227/tech" />
         </div>
+    </section>
 </div>
-</section>
-
 <div class="event-details">
-
-
     <div class="event-list-details">
-        <ul>
-            <li class="locationevent">{{data.provincia}}</li>
-            <li class="locationevent">from : {{data.dateInit}} {{data.timeInit}} </li>
-            <li class="locationevent">to : {{data.dateEnd}} {{data.timeEnd}} </li>
-            <li class="locationevent">{{data.price}} € </li>
+        <div class="event-description">
+            <h4>Date : {{data.dateInit}} at {{data.timeInit}} </h4>
 
-        </ul>
+            <p>{{data.description}}</p>
+
+            <p>{{data.price}} € </p>
+        </div>
     </div>
 
     <form action="/events/assist" method="post">
@@ -72,18 +66,20 @@
             </div>
         </div>
     </form>
-    {{!-- <form action="/events/cancel" method="post">
-            <input type="text" name="id" value="{{data.id}}" hidden>
-
-            <button class="btnpink" type="submit">Cancel</button>
-        </form> --}}
+    <form action="/events/cancel" method="post">
+        <input type="text" name="id" value="{{data.id}}" hidden>
+        <div class="card-media-body">
+            <div class="card-meda-header event-cancel">
+                <a type="submit" href="" class="card-media-link">Cancel </a>
+            </div>
+        </div>
+    </form>
 
 </div>
-</div>
+
 
 {{!-- {{#if isAdmin}}
 <div class="events-media">
     {{> eventadmin}}
 </div>
 {{/if}} --}}
-</div>

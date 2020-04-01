@@ -44,7 +44,7 @@
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  padding: 3rem;
+  padding: 3rem 1rem 0 1rem;
 }
 .event-list-details li {
   list-style: none;
@@ -101,14 +101,12 @@
   align-items: center;
   font-family: "Lato", sans-serif;
 }
-.locationevent {
-  font-family: "Lato", sans-serif;
-  text-align: center;
+.event-description {
   font-size: 120%;
   font-weight: bold;
   color: rgba(53, 53, 53, 0.842);
 }
-.locationevent {
+.event-description {
   font-size: 90%;
   margin-top: 15px;
   color: rgba(48, 48, 48, 0.699);
@@ -229,6 +227,13 @@
   margin-left: 10px;
   color: rgba(66, 66, 66, 0.938);
 }
+.event-cancel a {
+  position: relative;
+  bottom: 9rem;
+  left: 13rem;
+  font-size: 0.9em;
+  color: red;
+}
 
 /* DANI ===== */
 .bycity {
@@ -339,7 +344,6 @@
   transition: 1s ease;
   height: 225px;
 }
-
 .slideshow-container:hover {
   animation-play-state: paused;
 }
