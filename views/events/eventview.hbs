@@ -1,84 +1,89 @@
 <div class="container-event-details">
     {{> eventViewMenu}}
-    <div class="event-details">
+
+    <section class="slideshow">
+        <div class="event-details"></div>
         <div>
             <h1 class="title-event"> {{data.name}}</h1>
-        </div>
-        <div class="icon">
-            {{#if canEdit}}
 
-            <i>{{> buttonEdit}}</i>
+            {{#if canEdit}}
+            <div class="icon">
+                <i class="fa fa-pencil">{{> buttonEdit}}</i>
+            </div>
+
 
             {{/if}}
         </div>
-        <div class="event-list-details">
-            <ul>
-                <li class="locationevent">{{data.provincia}}</li>
-                <li class="locationevent">from : {{data.dateInit}} {{data.timeInit}} </li>
-                <li class="locationevent">to : {{data.dateEnd}} {{data.timeEnd}} </li>
-                <li class="locationevent">{{data.price}} € </li>
 
-            </ul>
+        <div class="slideshow-container slide">
+            <img src="http://placeimg.com/625/225/any" />
+            <img src="http://placeimg.com/625/225/animals" />
+            <img src="http://placeimg.com/625/225/arch" />
         </div>
+</div>
+</section>
 
-        <div>
-            {{!-- <<<<<<< DANI --}}
-            <h3>Tags</h3>
-            {{#each data.tags}}
-            {{this}}
+<div class="event-details">
 
 
-            {{/each}}
+    <div class="event-list-details">
+        <ul>
+            <li class="locationevent">{{data.provincia}}</li>
+            <li class="locationevent">from : {{data.dateInit}} {{data.timeInit}} </li>
+            <li class="locationevent">to : {{data.dateEnd}} {{data.timeEnd}} </li>
+            <li class="locationevent">{{data.price}} € </li>
 
+        </ul>
+    </div>
 
-            <h3>Admin: {{data.admin}}</h3>
-        </div>
-        {{!-- ======= --}}
-        <form action="/events/assist" method="post">
-            <input type="text" name="id" value="{{data.id}}" hidden>
-
-
-            <div class="card-media-body">
-                <div class="card-meda-header">
-                    <div>
-                        <span class="card-media-body-supporting-bottom-text subtle">#Music #Party</span>
-                    </div>
-
-                    <div>
-                        <button type="submit" style="background-color: none;"><a href="" class="card-media-link">GET
-                                TICKETS</a></button>
-                    </div>
-                </div>
+    <form action="/events/assist" method="post">
+        <input type="text" name="id" value="{{data.id}}" hidden>
+        <div class="card-media-body">
+            <div class="separator"></div>
+            <div class="card-meda-header">
                 <div>
-                    <h3>Social</h3>
+                    {{#each data.tags}}
+                    <span class="card-media-body-supporting-bottom-text subtle">
+                        #{{this}}
+                    </span>
 
-                    <ul class="card-media-object-social-list">
-                        <li>
-                            <a href="/profile/{{data.admin}}">{{data.admin}}</a>
-                            <img src="https://s10.postimg.cc/3rjjbzcvd/profile_f.jpg" class="">
-                        </li>
-                        {{#each data.members}}
-                        <li>
-                            <a href="/profile/{{this.username}}">{{this.username}}</a>
-                            <img src="https://s16.postimg.cc/b0j0djh79/profile_0_f.jpg" class="">
-                        </li>
-                        {{/each}}
-                    </ul>
+                    {{/each}}
+                </div>
+
+                <div>
+                    <a type="submit" href="" class="card-media-link">GET TICKETS</a>
                 </div>
             </div>
-        </form>
-        {{!-- <form action="/events/cancel" method="post">
+            <div>
+                <h3>Social</h3>
+
+                <ul class="card-media-object-social-list">
+                    <li>
+                        <a href="/profile/{{data.admin}}">{{data.admin}}</a>
+                        <img src="https://s10.postimg.cc/3rjjbzcvd/profile_f.jpg" class="">
+                    </li>
+                    {{#each data.members}}
+                    <li>
+                        <a href="/profile/{{this.username}}">{{this.username}}</a>
+                        <img src="https://s16.postimg.cc/b0j0djh79/profile_0_f.jpg" class="">
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </form>
+    {{!-- <form action="/events/cancel" method="post">
             <input type="text" name="id" value="{{data.id}}" hidden>
 
             <button class="btnpink" type="submit">Cancel</button>
         </form> --}}
 
-    </div>
+</div>
 </div>
 
-{{#if isAdmin}}
+{{!-- {{#if isAdmin}}
 <div class="events-media">
     {{> eventadmin}}
 </div>
-{{/if}}
+{{/if}} --}}
 </div>
