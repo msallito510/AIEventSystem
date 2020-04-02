@@ -31,7 +31,7 @@ router.get("/", function (req, res, next) {
 
         }).then((data) => {
 
-            res.render("finder/main", { data: data, datatag: datatag, title: name });
+            res.render("finder/main", { title: name, data: data, datatag: datatag });
 
 
         })

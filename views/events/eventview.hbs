@@ -15,8 +15,9 @@
             <ul>
                 <li class="locationevent">{{data.provincia}}</li>
                 <li class="locationevent">from : {{data.dateInit}} {{data.timeInit}} </li>
-                <li class="locationevent">to : {{data.dateEnd}} {{data.timeEnd}} </li>
+                {{!-- <li class="locationevent">to : {{data.dateEnd}} {{data.timeEnd}} </li> --}}
                 <li class="locationevent">{{data.price}} € </li>
+                <li class="locationevent">{{data.description}} </li>
 
             </ul>
         </div>
@@ -30,43 +31,43 @@
 
             {{/each}}
 
-
-            <h3>Admin: {{data.admin}}</h3>
+            {{!-- 
+            <h3>Admin: {{data.admin}}</h3> --}}
         </div>
         {{!-- ======= --}}
         <form action="/events/assist" method="post">
             <input type="text" name="id" value="{{data.id}}" hidden>
 
 
-            <div class="card-media-body">
-                <div class="card-meda-header">
-                    <div>
-                        <span class="card-media-body-supporting-bottom-text subtle">#Music #Party</span>
-                    </div>
-
-                    <div>
-                        <button type="submit" style="background-color: none;"><a href="" class="card-media-link">GET
-                                TICKETS</a></button>
-                    </div>
-                </div>
+            <button type="submit" style="background-color: none;"><a href="" class="card-media-link">GET
+                    TICKETS</a></button>
+        </form>
+        <div class="card-media-body">
+            <div class="card-meda-header">
                 <div>
-                    <h3>Social</h3>
+                    {{!-- <span class="card-media-body-supporting-bottom-text subtle">#Music #Party</span> --}}
+                </div>
 
-                    <ul class="card-media-object-social-list">
-                        <li>
-                            <a href="/profile/{{data.admin}}">{{data.admin}}</a>
-                            <img src="https://s10.postimg.cc/3rjjbzcvd/profile_f.jpg" class="">
-                        </li>
-                        {{#each data.members}}
-                        <li>
-                            <a href="/profile/{{this.username}}">{{this.username}}</a>
-                            <img src="https://s16.postimg.cc/b0j0djh79/profile_0_f.jpg" class="">
-                        </li>
-                        {{/each}}
-                    </ul>
+                <div>
                 </div>
             </div>
-        </form>
+            <div>
+                <h3>Social</h3>
+
+                <ul class="card-media-object-social-list">
+                    <li>
+                        <a href="/profile/{{data.admin}}">{{data.admin}}</a>
+                        <img src="https://s10.postimg.cc/3rjjbzcvd/profile_f.jpg" class="">
+                    </li>
+                    {{#each data.members}}
+                    <li>
+                        <a href="/profile/{{this.username}}">{{this.username}}</a>
+                        <img src="https://s16.postimg.cc/b0j0djh79/profile_0_f.jpg" class="">
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
         {{!-- <form action="/events/cancel" method="post">
             <input type="text" name="id" value="{{data.id}}" hidden>
 

@@ -82,32 +82,10 @@
         <h5 class="display userlabel" id="useralertpass">Change password need re-login</h5>
     </form>
 
-    <form action="/action/upload" method="post">
-        <input name="nametoedit" hidden value="{{datauser.username}}">
-        <h5>Change Photo</h5>
-
-        <div class="open-local-file">
-            <input type="file" name="picture" accept="application/x-zip-compressed,image/*">
-        </div>
-
-        <div class=" profile-selfie">
-            <input type="image" src="/images/camera.png" value="submit" />
-        </div>
-
-    </form>
-
 
 
 </div>
 <script>
-    var camera = document.getElementById('photo');
-    camera.addEventListener('change', function (e) {
-        var file = e.target.files[0];
-
-        document.getElementById('profileimage').src = URL.createObjectURL(file);
-        // Do something with the image file.
-        frame.src = URL.createObjectURL(file);
-    })
 
     document.getElementById('editUser').addEventListener('click', () => {
 

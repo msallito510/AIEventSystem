@@ -25,7 +25,9 @@ router.get("/", function (req, res, next) {
 });
 
 router.get("/add", function (req, res, next) {
-  res.render("events/eventadd");
+  let datausr = req.cookies["datauser"];
+  let name = datausr.username;
+  res.render("events/eventadd", { title: name });
 });
 
 router.post("/add", function (req, res, next) {
@@ -184,12 +186,19 @@ router.post("/assist", function (req, res, next) {
           res.redirect("view/" + id + "/");
         });
       } else {
-        res.redirect("view/" + id + "/");
+        console.log("si data")
+        Event.findByIdAndUpdate(
+          { _id: id },
+          { $pull: { members: datausr._id } }
+        ).then(() => {
+          res.redirect("view/" + id + "/");
+        });
+
+
+
       }
     })
-    .catch(() => {
-      res.redirect("view/" + id + "/");
-    });
+
 });
 
 router.get("/likes", function (req, res, next) {
