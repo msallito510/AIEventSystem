@@ -11,12 +11,9 @@
   }
   h2 {
     position: relative;
-    top: 4rem;
+    top: 1rem;
   }
   .container div {
-    position: relative;
-    margin-top: 1rem;
-    bottom: 2rem;
     left: 0.2rem;
   }
   .container h3 {
@@ -30,7 +27,8 @@
     margin-top: 2rem;
   }
   .welcome h2 {
-    position: initial;
+    position: relative;
+    left: -0.5rem;
   }
   .welcome h3 {
     bottom: 7rem;
@@ -72,7 +70,6 @@
   .card-media-link {
     right: 2rem;
   }
-
   .menu {
     height: 5em;
     width: 100%;
@@ -127,12 +124,31 @@
     width: 6.5rem;
   }
   .profile-img {
+    position: relative;
+    left: 0.5rem;
     width: 10rem;
     margin: 6rem 0 5rem;
   }
   .separator {
     border: 1px solid #e2e2e2;
     margin-bottom: 15px;
+  }
+  .slideshow {
+    width: 20rem;
+  }
+  .event-details {
+    width: 20rem;
+  }
+  .event-cancel a {
+    left: 13rem;
+  }
+  img,
+  .text-container {
+    width: 625px;
+    height: auto;
+  }
+  .icon {
+    width: 1.2em;
   }
 
   /* .titleevent,

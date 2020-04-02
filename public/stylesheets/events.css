@@ -15,6 +15,16 @@
   display: flex;
   flex-direction: row;
 }
+.container div {
+  position: relative;
+  margin-top: 1rem;
+  bottom: 2rem;
+  left: 1rem;
+}
+.welcome h2 {
+  position: relative;
+  left: 7rem;
+}
 
 .eventcontainer-add {
   display: flex;
@@ -38,7 +48,7 @@
   display: flex;
   flex-direction: column;
   box-shadow: 0 5px 14px rgba(0, 0, 0, 0.2);
-  width: 20rem;
+  /* width: 20rem; */
 }
 .event-list-details {
   display: flex;
@@ -64,7 +74,7 @@
 }
 .card-media-link {
   position: absolute;
-  right: 65rem;
+  right: 50%;
   color: #41c1f2;
   text-decoration: none;
 }
@@ -100,6 +110,7 @@
   flex-direction: column;
   align-items: center;
   font-family: "Lato", sans-serif;
+  /* margin-right: 9rem; */
 }
 .event-description {
   font-size: 120%;
@@ -150,7 +161,7 @@
 
 .btnpink {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   align-content: center;
   border: none;
@@ -229,8 +240,8 @@
 }
 .event-cancel a {
   position: relative;
-  bottom: 9rem;
-  left: 13rem;
+  bottom: 8rem;
+  left: 45%;
   font-size: 0.9em;
   color: red;
 }
@@ -332,7 +343,7 @@
 
 /* ==== Event images slides ==== */
 .slideshow {
-  width: 20rem;
+  /* width: 20rem; */
   margin: 0 auto;
   overflow: hidden;
   box-shadow: 0 5px 14px rgba(0, 0, 0, 0.2);
@@ -350,8 +361,8 @@
 
 img,
 .text-container {
-  width: 625px;
-  height: auto;
+  width: 60%;
+  height: 100%;
   display: inline-block;
   font-size: 16px;
   text-align: center;
