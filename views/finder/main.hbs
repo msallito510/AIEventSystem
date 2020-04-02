@@ -18,48 +18,50 @@
 
         </form>
 
-        <form method="post" action="finder/result/" + {{datatag}}>
 
-            {{!-- action="finder/result/" + {{datatag}} --}}
-            {{!-- <select name="tag" class="bycity" size="1" id=""> --}}
+        {{!-- action="finder/result/" + {{datatag}} --}}
+        {{!-- <select name="tag" class="bycity" size="1" id=""> --}}
 
-            {{!-- {{#each datatag}}
+        {{!-- {{#each datatag}}
                     <option value="{{this}}">{{this}}</option> --}}
 
-            {{!-- <a class="bycity" href="finder/result/{{this}}/">{{this}}</a> --}}
+        {{!-- <a class="bycity" href="finder/result/{{this}}/">{{this}}</a> --}}
 
 
-            {{!-- <br>
+        {{!-- <br>
                     {{/each}} --}}
 
 
-            <div class="search-tag-position">
-                <ul class="search-tag">
-                    {{#each datatag}}
+        <div class="search-tag-position">
+            <ul class="search-tag">
+                {{#each datatag}}
+                <form method="post" action="finder/tagresult/">
                     <li>
-                        <a href="finder/result/{{this}}/">#{{this}}</a>
+
+                        <input type="submit" value="{{this}}" name="tag" id="">
+                        {{!-- <a href="finder/tagresult/{{this}}/">#{{this}}</a> --}}
                         {{!-- <input value="{{this}}" type="submit"> --}}
                     </li>
-                    {{/each}}
-                </ul>
-            </div>
+                </form>
+                {{/each}}
+            </ul>
+        </div>
 
-            {{!-- </select> --}}
+        {{!-- </select> --}}
 
-            {{!-- <div class="profile event-details">
+        {{!-- <div class="profile event-details">
 
                 <input type="submit" value="Find">
 
             </div> --}}
 
-        </form>
-        <div class="container">
+        {{!-- <div class="container">
             <div class="welcome">
                 <h2>Event list</h2>
             </div>
             <div class="col-events">
                 {{> eventListAll}}
             </div>
-        </div>
+        </div> --}}
     </div>
 </div>

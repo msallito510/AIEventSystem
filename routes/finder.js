@@ -3,34 +3,31 @@ var router = express.Router();
 const mongoose = require("mongoose");
 const Event = require("../models/events");
 
-router.use("/", function(req, res, next) {
+router.use("/", function (req, res, next) {
   if (req.cookies["datauser"]) {
     let datausr = req.cookies["datauser"];
     let name = datausr.username;
-<<<<<<< HEAD
     Event.distinct('tags').then((datatag) => {
 
 
-        return datatag;
+      return datatag;
     }).then((datatag) => {
 
 
-        Event.distinct('location').then((data) => {
+      Event.distinct('location').then((data) => {
 
-            return data;
+        return data;
 
-        }).then((data) => {
+      }).then((data) => {
 
-            res.render("finder/main", { title: name, data: data, datatag: datatag });
+        res.render("finder/main", { title: name, data: data, datatag: datatag });
 
 
-        })
+      })
 
 
     })
 
-=======
->>>>>>> c24115b634304fbf8e32dfcfc2a5d32be8c061bd
 
     next();
   } else {
@@ -38,7 +35,7 @@ router.use("/", function(req, res, next) {
   }
 });
 
-router.get("events", function(req, res, next) {
+router.get("events", function (req, res, next) {
   let datausr = req.cookies["datauser"];
   let name = datausr.username;
   Event.find({ admin: name }).then(persodata => {
@@ -48,7 +45,7 @@ router.get("events", function(req, res, next) {
   });
 });
 
-router.get("/", function(req, res, next) {
+router.get("/", function (req, res, next) {
   let datausr = req.cookies["datauser"];
   let name = datausr.username;
   Event.distinct("tags")
@@ -70,7 +67,7 @@ router.get("/", function(req, res, next) {
     });
 });
 
-router.post("/result", function(req, res, next) {
+router.post("/result", function (req, res, next) {
   let location = req.body.city;
   if (location) {
     Event.find({ location: location })
@@ -81,7 +78,12 @@ router.post("/result", function(req, res, next) {
         res.render("finder/main", { data: data, title: name });
       });
   }
-  let tag = req.body.tag;
+
+});
+
+router.post('/tagresult', function (req, res, next) {
+  let { tag } = req.body;
+
   if (tag) {
     Event.find({ tags: tag })
       .then(data => {
@@ -91,6 +93,6 @@ router.post("/result", function(req, res, next) {
         res.render("finder/main", { data: data, title: name });
       });
   }
-});
+})
 
 module.exports = router;
