@@ -1,54 +1,65 @@
 <div class="container-event-details">{{> eventsMenu}}
     <div class="containerevent">
-        <div class="private">
-            <h3 class="center">By city</h3>
-        </div>
+
         <form method="post" action="finder/result/" + {{data}}>
-            <div class="profile event-details">
-                <h5>Select city</h5>
+            <select name="city" class="search-bar" size="1" id="">
+                {{#each data}}
+                <option value="{{this}}">{{this}}</option>
+                {{/each}}
+            </select>
 
-                <select name="city" class="bycity" size="1" id="">
+            <div class="search-btn-content">
+                <button type="submit" class="search-button" value="Search">
+                    <i class="fa fa-search"></i>
+                </button>
 
-                    {{#each data}}
-                    <option value="{{this}}">{{this}}</option>
-
-                    {{!-- <a class="bycity" href="finder/result/{{this}}/">{{this}}</a> --}}
-
-
-                    <br>
-                    {{/each}}
-                </select>
-
-
-                <input type="submit" value="Find">
 
             </div>
 
         </form>
-        <div class="private">
-            <h3 class="center">By TagName</h3>
-        </div>
+
         <form method="post" action="finder/result/" + {{datatag}}>
-            <div class="profile event-details">
-                <h5>Select TAG</h5>
 
-                <select name="tag" class="bycity" size="1" id="">
+            {{!-- action="finder/result/" + {{datatag}} --}}
+            {{!-- <select name="tag" class="bycity" size="1" id=""> --}}
 
+            {{!-- {{#each datatag}}
+                    <option value="{{this}}">{{this}}</option> --}}
+
+            {{!-- <a class="bycity" href="finder/result/{{this}}/">{{this}}</a> --}}
+
+
+            {{!-- <br>
+                    {{/each}} --}}
+
+
+            <div class="search-tag-position">
+                <ul class="search-tag">
                     {{#each datatag}}
-                    <option value="{{this}}">{{this}}</option>
-
-                    {{!-- <a class="bycity" href="finder/result/{{this}}/">{{this}}</a> --}}
-
-
-                    <br>
+                    <li>
+                        <a href="finder/result/{{this}}/">#{{this}}</a>
+                        {{!-- <input value="{{this}}" type="submit"> --}}
+                    </li>
                     {{/each}}
-                </select>
+                </ul>
+            </div>
 
+            {{!-- </select> --}}
+
+            {{!-- <div class="profile event-details">
 
                 <input type="submit" value="Find">
 
-            </div>
+            </div> --}}
 
         </form>
+        <div class="container">
+            <div class="welcome">
+                <h2>Event list</h2>
+            </div>
+            <div class="col-events">
+                {{> eventListAll}}
+            </div>
+        </div>
     </div>
 </div>

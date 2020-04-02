@@ -9,7 +9,7 @@ const User = require("../models/user");
 router.get("/login", function(req, res, next) {
   res.render("auth/login");
 });
-router.get("/signin", function(req, res, next) {
+router.get("/signup", function(req, res, next) {
   res.render("auth/signin");
 });
 router.post("/login", function(req, res, next) {
@@ -33,7 +33,7 @@ router.post("/login", function(req, res, next) {
     );
   }
 });
-router.post("/signin", function(req, res, next) {
+router.post("/signup", function(req, res, next) {
   let { username, password, email } = req.body;
 
   if (username == "" || password == "") {

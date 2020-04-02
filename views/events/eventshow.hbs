@@ -1,23 +1,16 @@
-{{> eventsMenu}}
-
-<h2>My events</h2>
-<div class="containerev">
-    {{#each persodata}}
-
-    <div class="imageside">
-        {{!-- 
-            <img class="imgeventshow" src="/images/no_image_available.jpeg" alt="" srcset=""> --}}
-
+<div class="container">
+    <div class="welcome">
+        <h2>My events</h2>
     </div>
-    <div class="infoside">
-        <p class="title-event">{{this.name}}</p>
-        <p class="locationevent">{{this.location}}</p>
 
-        <a class=" btnpink" href="/events/view/{{this.id}}">GO TO EVENT</a>
+    {{> eventsMenu}}
+    <div class="col-events">
+        {{> eventPersonalList}}
     </div>
-    {{/each}}
+    <div class="welcome">
+        <h2>Other events</h2>
+    </div>
+    <div class="col-events">
+        {{> eventListAll}}
+    </div>
 </div>
-
-<h2>Other events</h2>
-
-{{> eventListAll}}
