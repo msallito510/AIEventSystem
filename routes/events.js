@@ -242,7 +242,7 @@ router.get("/add", function (req, res, next) {
     // ).then(data => {
 
     //   res.redirect("/events/eventLikes");
-    // });
   });
+});
 
-  module.exports = router;
+module.exports = router;
