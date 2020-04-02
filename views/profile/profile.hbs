@@ -7,53 +7,19 @@
         <h3>My events </h3>
     </div>
     <div class="col-events">
-
-        <div class="containerev">
-            {{#each persodata}}
-            <div class="eventcontainer">
-
-                <div class="imageside">
-                    {{!-- 
-            <img class="profile-img" src="/images/no_image_available.jpeg" alt="" srcset=""> --}}
-
-                </div>
-                <div class="infoside">
-                    <p class="title-event">{{this.name}}</p>
-                    <p class="locationevent">{{this.location}}</p>
-
-
-                    <a class=" btnpink" href="/events/view/{{this.id}}">GO TO EVENT</a>
-                </div>
-                {{!-- <ul class="listevent">
-
-            <li class="titleevent"> {{this.name}} </li>
-
-            <li class="locationevent">{{this.provincia}}</li>
-            <h4><a class="btn" href="/events/edit/{{this.id}}">EDIT</a></h4>
-           
-        </ul> --}}
-
-            </div>
-            {{/each}}
-        </div>
+        {{> eventPersonalList}}
     </div>
-
-
 </section>
 
 {{#if isAdmin}}
 
-
 <div class="title-event">
-
     <div>
         <h3>Settings</h3>
     </div>
     <div>
         <h3 class="center">User Information</h3>
     </div>
-
-
 </div>
 
 <div class="profile">
@@ -82,32 +48,10 @@
         <h5 class="display userlabel" id="useralertpass">Change password need re-login</h5>
     </form>
 
-    <form action="/action/upload" method="post">
-        <input name="nametoedit" hidden value="{{datauser.username}}">
-        <h5>Change Photo</h5>
-
-        <div class="open-local-file">
-            <input type="file" name="picture" accept="application/x-zip-compressed,image/*">
-        </div>
-
-        <div class=" profile-selfie">
-            <input type="image" src="/images/camera.png" value="submit" />
-        </div>
-
-    </form>
-
 
 
 </div>
 <script>
-    var camera = document.getElementById('photo');
-    camera.addEventListener('change', function (e) {
-        var file = e.target.files[0];
-
-        document.getElementById('profileimage').src = URL.createObjectURL(file);
-        // Do something with the image file.
-        frame.src = URL.createObjectURL(file);
-    })
 
     document.getElementById('editUser').addEventListener('click', () => {
 

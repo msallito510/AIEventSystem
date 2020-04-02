@@ -26,7 +26,7 @@ router.get('/:nombre/', function (req, res, next) {
             Event.find({ admin: nombre }).then(persodata => {
                 Event.find({}).then(data => {
 
-                    res.render('profile/profile', { error: ErrorExistente, datauser: datauser, data: data, persodata: persodata, isAdmin: true });
+                    res.render('profile/profile', { title: name, error: ErrorExistente, datauser: datauser, data: data, persodata: persodata, isAdmin: true });
 
                 });
             });
@@ -34,7 +34,7 @@ router.get('/:nombre/', function (req, res, next) {
             Event.find({ admin: nombre }).then(persodata => {
                 Event.find({}).then(data => {
 
-                    res.render('profile/profile', { error: ErrorExistente, data: data, persodata: persodata, isAdmin: false });
+                    res.render('profile/profile', { title: name, error: ErrorExistente, data: data, persodata: persodata, isAdmin: false });
 
                 });
             });

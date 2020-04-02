@@ -24,7 +24,13 @@
 .menu li a.back:before {
   content: "\f060";
 }
-.icon i a.edit:before {
-  content: "\f040";
-  width: 1.2em;
+.icon {
+  position: relative;
+  width: 16em;
+}
+.icon i {
+  position: relative;
+  bottom: 2rem;
+  float: right;
+  left: 17rem;
 }
