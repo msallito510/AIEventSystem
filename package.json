@@ -10,7 +10,7 @@
     "@uppy/core": "^1.9.0",
     "@uppy/webcam": "^1.6.0",
     "async": "^3.2.0",
-    "aws-sdk": "^2.649.0",
+    "aws-sdk": "^2.814.0",
     "connect-flash": "^0.1.1",
     "connect-mongo": "^3.2.0",
     "cookie-parser": "~1.4.4",
